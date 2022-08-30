@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Work Sans', sans-serif;
+}
+
+header {
+    background: #ccab7f;
+}
+
+.botonMenuHeader {
+    button {
+        background: none;
+        border: none;
+        border-radius: 100px;
+        transition: all ease .25s;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        &:active {
+            box-shadow: 0 0 5px 5px #ffd6a0;
+        }
+    }
+    
+}
+
+.collapse {
+    background: #ECDED8;
+
+    nav a {
+        text-decoration: none;
+        font-weight: 300;
+        color: #000;
+        border-bottom: 1px solid #eee;
+        transition: all ease .2s;
+
+        &:hover {
+            font-weight: 500;
+            background: #e6cdc3;
+        }
+        
+        p {
+            margin: 0;
+            padding: 0;
+        }
+    }
+}
