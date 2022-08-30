@@ -48,3 +48,20 @@ header {
         }
     }
 }
+
+.portada {
+    position: relative;
+
+    .divTextoPortada {
+        position: absolute;
+        right: 0;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        background: rgba(230, 205, 195, .4);
+
+        .textoPortada {
+            
+        }
+    }
+}
