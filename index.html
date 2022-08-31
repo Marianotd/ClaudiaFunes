@@ -11,42 +11,42 @@
 </head>
 <body>
     <header>
-        <div class="d-flex flex-row flex-wrap justify-content-around align-content-center pt-4 pb-2">
+        <div class="d-flex flex-row flex-wrap justify-content-around align-content-center pt-4 pb-2 px-md-2">
             <!-- LOGO Y NOMBRE -->
-            <div class="d-flex flex-row flex-wrap align-content-center justify-content-evenly gap-2 col-5">
+            <div class="logoHeader d-flex flex-row flex-wrap align-content-center justify-content-center gap-2 col-5 col-md-2">
                 <img src="media/header/Logo.png" class="img img-fluid col-3" alt="Logo">
-                <h2 class="col-12 text-center">Claudilla</h2>
+                <h3 class="col-12 text-center m-0 p-0">Claudilla</h3>
             </div>
             <!-- MENU DE NAVEGACIÓN -->
-            <div class="botonMenuHeader col-5 d-flex align-items-center justify-content-center">
+            <div class="botonMenuHeader col-5 d-md-none d-flex align-items-center justify-content-center">
                 <button class="col-4 p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navHeader">
                     <img class="img-fluid" src="media/header/menuHamburguesa.svg" alt="Menu">
                 </button>
             </div>
 
-            <div class="collapse col-12" id="navHeader">
-                <nav class="d-flex flex-row flex-wrap">
-                    <a class="col-12 text-center py-3" href="#">
+            <div class="collapse col-12 col-md-10 d-md-flex flex-row align-items-md-center" id="navHeader">
+                <nav class="col-12 d-flex flex-row flex-wrap justify-content-evenly align-items-center">
+                    <a class="col-12 col-md-2 text-center py-3 p-md-1" href="#">
                         <img class="d-none d-xl-inline-block img-fluid" src="media/header/menuNav.png" alt="Ilustraciones">
-                        <p>Ilustraciones</p>
+                        <p class="textNav">Ilustraciones</p>
                     </a>
-                    <a class="col-12 text-center py-3" href="#">
+                    <a class="col-12 col-md-2 text-center py-3 p-md-1" href="#">
                         <img class="d-none d-xl-inline-block img-fluid" src="media/header/menuNav.png" alt="Tarot">
-                        <p>Tarot</p>
+                        <p class="textNav">Tarot</p>
                     </a>
-                    <a class="col-12 text-center py-3" href="#">
+                    <a class="col-12 col-md-2 text-center py-3 p-md-1" href="#">
                         <img class="d-none d-xl-inline-block img-fluid" src="media/header/menuNav.png" alt="Astrología">
-                        <p>Astrología</p>
+                        <p class="textNav">Astrología</p>
                     </a>
-                    <a class="col-12 text-center py-3" href="#">
+                    <a class="col-12 col-md-2 text-center py-3 p-md-1" href="#">
                         <img class="d-none d-xl-inline-block img-fluid" src="media/header/menuNav.png" alt="Cursos">
-                        <p>Cursos</p>
+                        <p class="textNav">Cursos</p>
                     </a>
-                    <a class="col-12 text-center py-3" href="#">
+                    <a class="col-12 col-md-2 text-center py-3 p-md-1" href="#">
                         <img class="d-none d-xl-inline-block img-fluid" src="media/header/menuNav.png" alt="Otros(Objetos)">
-                        <p>Otros(Objetos)</p>
+                        <p class="textNav">Otros</p>
                     </a>
-                    <a class="col-12 text-center py-3" href="#">
+                    <a class="col-12 col-md-2 text-center py-3 p-md-1" href="#">
                         <p>Contacto</p>
                     </a>
                 </nav>
@@ -56,15 +56,37 @@
 
     <main>
         <section>
+            <!-- PORTADA -->
             <div class="portada">
                 <img class="img-fluid" src="media/index/portada.jpg" alt="">
                 <div class="divTextoPortada">
-                    <div class="textoPortada col-6 d-flex flex-wrap">
+                    <div class="textoPortada col-9 d-flex flex-wrap text-end">
                         <h3 class="col-12">Titulo de muestra</h3>
-                        <p class="col-12">Parrafo de muestra</p>
+                        <p class="col-12">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, sequi!</p>
                     </div>
                 </div>
             </div>
+        </section>
+
+        <section>
+            <nav class="categoriasBody col-12 d-flex flex-row flex-wrap justify-content-evenly align-items-center gap-3 py-4 px-2">
+                <a class="col-5 col-md-2 text-center" href="#">
+                    <img class="img-fluid col-10" src="media/header/menuNav.png" alt="Ilustraciones">
+                    <p>Ilustraciones</p>
+                </a>
+                <a class="col-5 col-md-2 text-center" href="#">
+                    <img class="img-fluid col-10" src="media/header/menuNav.png" alt="Tarot">
+                    <p>Tarot</p>
+                </a>
+                <a class="col-5 col-md-2 text-center" href="#">
+                    <img class="img-fluid col-10" src="media/header/menuNav.png" alt="Astrología">
+                    <p>Astrología</p>
+                </a>
+                <a class="col-5 col-md-2 text-center" href="#">
+                    <img class="img-fluid col-10" src="media/header/menuNav.png" alt="Cursos">
+                    <p>Cursos</p>
+                </a>
+            </nav>
         </section>
 
     </main>
