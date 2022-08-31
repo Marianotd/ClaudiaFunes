@@ -5,7 +5,7 @@
     font-family: 'Work Sans', sans-serif;
 }
 
-header {
+header, footer {
     background: #ccab7f;
 }
 
@@ -114,7 +114,6 @@ header {
     }
 }
 
-
 // INDEX PORTADA
 .portada {
     position: relative;
@@ -140,6 +139,10 @@ header {
             p {
                 font-size: 1.1rem;
                 font-weight: 500;
+
+                @media all and (max-width: 400px) {
+                    display: none;
+                }
             }
 
             @media all and (min-width: 768px) {
@@ -170,6 +173,42 @@ header {
 
         p {
             font-family: 'Merriweather Sans', sans-serif;
+        }
+    }
+}
+
+// INDEX BIOGRAFÍA
+.biografia {
+    h5 {
+        font-size: 2.5rem;
+        color: #63615E;
+    }
+
+    p {
+        font-size: .9rem;
+
+        @media all and (min-width: 768px) {
+            text-align: center;
+        }
+    }
+}
+
+// FOOTER
+.divFooter {
+    h5 {
+        color: #63615E;
+        font-weight: 600;
+    }
+
+    a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: 500;
+        font-size: .85rem;
+        transition: all ease .4s;
+
+        &:hover {
+            transform: scale(1.15);
         }
     }
 }
