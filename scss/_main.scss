@@ -81,13 +81,13 @@ header, footer {
             position: relative;
             
             img {
-                max-width: 75px;
+                max-width: 55px;
                 transition: all ease .6s;
             }
 
             .textNav {
                 position: absolute;
-                top: 40%;
+                top: 35%;
                 left: 0;
                 right: 0;
                 margin: auto;
@@ -124,10 +124,10 @@ header, footer {
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(230, 205, 195, .35);
+        background: rgba(230, 205, 195, .5);
 
         .textoPortada {
-            color: black;
+            color: #222;
             margin-top: 20%;
             margin-left: 20%;
 
