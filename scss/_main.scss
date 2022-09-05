@@ -193,6 +193,65 @@ header, footer {
     }
 }
 
+// ILUSTRACIONES MENU
+.menuIlustraciones {
+    button {
+        background-color: #fff;
+        border: none;
+        border-top: 2px solid #ccab7f;
+        border-bottom: 2px solid #ccab7f;
+        color: #63615E;
+        transition: all ease .5s;
+        width: 35%;
+
+        &:hover {
+            color: #363634;
+            background-color: rgba(204, 171, 127, .15);
+        }
+
+        &:active {
+            transform: translateY(.4px);
+        }
+
+        @media all and (min-width: 768px) {
+            width: 30%;
+        }
+
+        @media  all and (min-width: 1200px) {
+            width: 12%;
+        }
+    }
+}
+
+.contIlustraciones {
+    img {
+        max-width: 85%;
+
+        @media all and (min-width: 768px) {
+            max-width: 45%;
+        }
+
+        @media all and (min-width: 1200px) {
+            max-width: 25%;
+        }
+    }
+}
+
+.irArriba {
+    border: none;
+    border-radius: 35px;
+    background-color: rgba(255, 255, 255, .5);
+    color: rgba(204, 171, 127, .5);
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    transition: all ease .5s;
+
+    &:hover {
+        color: rgba(204, 171, 127, 1);
+    }
+}
+
 // FOOTER
 .divFooter {
     h5 {
