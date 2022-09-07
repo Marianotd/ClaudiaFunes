@@ -1,9 +1,14 @@
-import NavBar from './components/navBar/NavBar';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './scss/styles.css'
+import NavBar from './components/header/navBar/NavBar'
 
 function App() {
   return (
     <>
-      <NavBar />
+      <header>
+        <NavBar />
+      </header>
+      
     </>
   );
 }

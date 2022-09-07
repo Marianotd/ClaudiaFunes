@@ -1,0 +1,273 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Work Sans', sans-serif;
+}
+
+header, footer {
+    background: #ccab7f;
+}
+
+.logoHeader {
+    h3 {
+        font-size: 1.5rem;
+
+        @media all and (min-width: 768px) {
+            font-size: 1.1rem;
+        }
+
+        @media all and (min-width: 1200px) {
+            font-size: 1.1rem;
+        }
+    }
+}
+
+// MENU HAMBURGUESA HEADER
+.botonMenuHeader {
+    button {
+        background: none;
+        border: none;
+        border-radius: 100px;
+        transition: all ease .25s;
+        max-width: 60px;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        &:active {
+            box-shadow: 0 0 5px 5px #ffd6a0;
+        }
+    }  
+}
+
+// NAV HEADER
+.collapse {
+    background: #ECDED8;
+
+    nav a {
+        text-decoration: none;
+        font-weight: 300;
+        color: #000;
+        border-bottom: 1px solid #eee;
+        transition: all ease .2s;
+
+        &:hover {
+            font-weight: 500;
+            background: #e6cdc3;
+        }
+   
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        @media all and (min-width: 768px) {
+            border: 1px solid #ccab7f;
+            border-radius: 35px;
+            font-size: .9rem;
+            color: #fff;
+            font-weight: 400;
+            transition: all ease .5s;
+
+            &:hover {
+                background: #ccab7f;
+                font-weight: 700;
+            }
+        }
+
+        @media all and (min-width: 1200px) {
+            position: relative;
+            
+            img {
+                max-width: 55px;
+                transition: all ease .6s;
+            }
+
+            .textNav {
+                position: absolute;
+                top: 35%;
+                left: 0;
+                right: 0;
+                margin: auto;
+                color: #fff;
+                opacity: 0;
+                transition: all ease .6s;
+            }
+
+            &:hover {              
+                img {
+                    opacity: .2;
+                }
+
+                .textNav {
+                    opacity: 1;
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+
+    @media all and (min-width: 768px) {
+        background: #ccab7f;
+    }
+}
+
+// INDEX PORTADA
+.portada {
+    position: relative;
+
+    .divTextoPortada {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(230, 205, 195, .5);
+
+        .textoPortada {
+            color: #222;
+            margin-top: 20%;
+            margin-left: 20%;
+
+            h3 {
+                font-size: 2.1rem;
+                font-weight: 700;
+            }
+
+            p {
+                font-size: 1.1rem;
+                font-weight: 500;
+
+                @media all and (max-width: 400px) {
+                    display: none;
+                }
+            }
+
+            @media all and (min-width: 768px) {
+                margin-top: 25%;
+            }
+        }
+    }
+}
+
+// INDEX CATEGORIAS
+.categoriasBody {
+    background-image: url(https://lunalogia.com/wp-content/uploads/2021/08/Lunalogia-academia-carta-natal-astro-talleres-cursos-consciencia2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    a {
+        text-decoration: none;
+        color: #63615E;
+
+        img {
+            transition: all ease .6s;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+
+        p {
+            font-family: 'Merriweather Sans', sans-serif;
+        }
+    }
+}
+
+// INDEX BIOGRAFÍA
+.biografia {
+    h5 {
+        font-size: 2.5rem;
+        color: #63615E;
+    }
+
+    p {
+        font-size: .9rem;
+
+        @media all and (min-width: 768px) {
+            text-align: center;
+        }
+    }
+}
+
+// ILUSTRACIONES MENU
+.menuIlustraciones {
+    button {
+        background-color: #fff;
+        border: none;
+        border-top: 2px solid #ccab7f;
+        border-bottom: 2px solid #ccab7f;
+        color: #63615E;
+        transition: all ease .5s;
+        width: 35%;
+
+        &:hover {
+            color: #363634;
+            background-color: rgba(204, 171, 127, .15);
+        }
+
+        &:active {
+            transform: translateY(.4px);
+        }
+
+        @media all and (min-width: 768px) {
+            width: 30%;
+        }
+
+        @media  all and (min-width: 1200px) {
+            width: 12%;
+        }
+    }
+}
+
+.contIlustraciones {
+    img {
+        max-width: 85%;
+
+        @media all and (min-width: 768px) {
+            max-width: 45%;
+        }
+
+        @media all and (min-width: 1200px) {
+            max-width: 25%;
+        }
+    }
+}
+
+.irArriba {
+    border: none;
+    border-radius: 35px;
+    background-color: rgba(255, 255, 255, .5);
+    color: rgba(204, 171, 127, .5);
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    transition: all ease .5s;
+
+    &:hover {
+        color: rgba(204, 171, 127, 1);
+    }
+}
+
+// FOOTER
+.divFooter {
+    h5 {
+        color: #63615E;
+        font-weight: 600;
+    }
+
+    a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: 500;
+        font-size: .85rem;
+        transition: all ease .4s;
+
+        &:hover {
+            transform: scale(1.15);
+        }
+    }
+}
