@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import Collapse from 'react-bootstrap/Collapse';
 import Logo from '../../../media/header/Logo.png'
-import MenuHamburguesa from '../../../media/header/menuHamburguesa.jsx';
 import ImgNav from '../../../media/header/menuNav.png'
+import { CgMenu } from 'react-icons/cg';
 
 function NavBar() {
     const [open, setOpen] = useState(false);
@@ -15,11 +15,7 @@ function NavBar() {
                     <h3 className="col-12 text-center m-0 p-0">Claudilla</h3>
                 </div>
                 <div className="botonMenuHeader col-5 d-md-none d-flex align-items-center justify-content-center">                   
-                    <button className="col-4 p-2" type="button" onClick={() => setOpen(!open)}>
-                        <MenuHamburguesa />
-                        
-                        {/* <img className="img-fluid" src="../../../media/header/menuHamburguesa.svg" alt="Menu"/> */}
-                    </button>
+                    <button type="button" onClick={() => setOpen(!open)}><CgMenu size={45}/></button>      
                 </div>
 
                 <Collapse in={open}>
