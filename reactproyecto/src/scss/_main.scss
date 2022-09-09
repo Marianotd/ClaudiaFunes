@@ -253,7 +253,7 @@ header, footer {
 .contProductos {
     .productos {
         border-radius: 10px;
-        width: 85%;
+        width: 70%;
         transition: all ease .5s;
         
         &:hover {
@@ -266,7 +266,7 @@ header, footer {
         }
 
         @media all and (min-width: 1200px) {
-            width: 27.5%;
+            width: 22.5%;
         }
 
         button {

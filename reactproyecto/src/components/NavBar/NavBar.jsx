@@ -1,10 +1,15 @@
+/* Import Bootstrap */
 import { useState } from 'react';
 import Collapse from 'react-bootstrap/Collapse';
+/* Import Iconos - Logo */
 import { CgMenu } from 'react-icons/cg';
 import Logo from '../Logo/Logo';
+/* Import Componentes */
 import NavLink from '../NavLink/NavLink';
-import NavLinkImg from '../NavLink/NavLinkImg.png'
 import NavLinkCarrito from '../NavLinkCarrito/NavLinkCarrito';
+/* Import Imagenes */
+import NavLinkImg from '../NavLink/NavLinkImg.png'
+import NavTatuajes from '../NavLink/NavTatuajes.png'
 
 export default function NavBar() {
     const [open, setOpen] = useState(false);
@@ -23,11 +28,11 @@ export default function NavBar() {
                     <Collapse className='collapseNav' in={open}>
                         <div className="collapse col-12 col-md-9 d-md-flex flex-row align-items-md-center" id="navHeader">
                             <nav className="col-12 d-flex flex-row flex-wrap justify-content-evenly align-items-center">
-                                <NavLink text="Ilustraciones" img={NavLinkImg} classTxt="textNav" classImg="d-none d-xl-inline-block  img-fluid"/>
-                                <NavLink text="Tarot" img={NavLinkImg} classTxt="textNav" classImg="d-none d-xl-inline-block  img-fluid"/>
-                                <NavLink text="Astrología" img={NavLinkImg} classTxt="textNav" classImg="d-none d-xl-inline-block  img-fluid"/>
-                                <NavLink text="Cursos" img={NavLinkImg} classTxt="textNav" classImg="d-none d-xl-inline-block  img-fluid"/>
-                                <NavLink text="Otros" img={NavLinkImg} classTxt="textNav" classImg="d-none d-xl-inline-block  img-fluid"/>
+                                <NavLink text="Ilustraciones" img={NavLinkImg} classTxt="textNav" classImg="d-none d-xl-inline-block img-fluid"/>
+                                <NavLink text="Tarot" img={NavLinkImg} classTxt="textNav" classImg="d-none d-xl-inline-block img-fluid"/>
+                                <NavLink text="Astrología" img={NavLinkImg} classTxt="textNav" classImg="d-none d-xl-inline-block img-fluid"/>
+                                <NavLink text="Cursos" img={NavLinkImg} classTxt="textNav" classImg="d-none d-xl-inline-block img-fluid"/>
+                                <NavLink text="Tatuajes" img={NavTatuajes} classTxt="textNav" classImg="d-none d-xl-inline-block img-fluid"/>
                                 <NavLink text="Contacto" img="" classTxt="" classImg="d-none"/>
                             </nav>
                         </div>
