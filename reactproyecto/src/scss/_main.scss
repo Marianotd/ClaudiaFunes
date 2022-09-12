@@ -283,6 +283,10 @@ header, footer {
                 font-weight: 600;
                 background: #fff;
             }
+
+            &:active {
+                transform: scale(0.9);
+            }
         }
     }
 }
