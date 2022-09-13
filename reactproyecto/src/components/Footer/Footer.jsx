@@ -1,4 +1,5 @@
 import React from 'react'
+import NavLink from '../NavBar/NavLink'
 import LogoImg from './Logo.png'
 
 export default function Footer() {
@@ -11,29 +12,30 @@ export default function Footer() {
 
             <div className="d-flex flex-column gap-2">
                 <h5 className="mb-3">Redes sociales</h5>
-                <a href="#">Instagram</a>
-                <a href="#">Facebook</a>
-                <a href="#">Twitter</a>
-                <a href="#">Pinterest</a>
-                <a href="#">Whatsapp</a>
+                <NavLink name="Instagram" link="https://www.instagram.com/"        classImg="d-none" targetLink="_blank"/>
+                <NavLink name="Facebook"  link="https://es-la.facebook.com/"       classImg="d-none" targetLink="_blank"/>
+                <NavLink name="Twitter"   link="https://twitter.com/?lang=es"      classImg="d-none" targetLink="_blank"/>
+                <NavLink name="Pinterest" link="https://ar.pinterest.com/"         classImg="d-none" targetLink="_blank"/>
+                <NavLink name="Whatsapp"  link="https://www.whatsapp.com/?lang=es" classImg="d-none" targetLink="_blank"/>
             </div>
 
             <div className="d-flex flex-column gap-2">
                 <h5 className="mb-3">Categorias</h5>
-                <a href="ilustraciones.html">Ilustraciones</a>
-                <a href="#">Tarot</a>
-                <a href="#">Astrología</a>
-                <a href="#">Cursos</a>
-                <a href="#">Otros</a>
+                <NavLink name="Ilustraciones" link="ilustraciones.html" classImg="d-none" targetLink="_blank"/>
+                <NavLink name="Tarot"         link="tarot.html"         classImg="d-none" targetLink="_blank"/>
+                <NavLink name="Astrología"    link="astrologia.html"    classImg="d-none" targetLink="_blank"/>
+                <NavLink name="Cursos"        link="cursos.html"        classImg="d-none" targetLink="_blank"/>
+                <NavLink name="Tatuajes"      link="tatuajes.html"      classImg="d-none" targetLink="_blank"/>
             </div>
 
             <div className="d-flex flex-column gap-2">
                 <h5 className="mb-3">Mi usuario</h5>
-                <a href="#">Mi cuenta</a>
-                <a href="#">Mis pedidos</a>
-                <a href="#">Mis cursos </a>
-                <a href="#">Contacto</a>
-                <a href="#">Cerrar sesión</a>
+                <NavLink name="Mi cuenta"     link="" classImg="d-none" targetLink=""/>
+                <NavLink name="Mis pedidos"   link="" classImg="d-none" targetLink=""/>
+                <NavLink name="Mis cursos"    link="" classImg="d-none" targetLink=""/>
+                <NavLink name="Contacto"      link="" classImg="d-none" targetLink=""/>
+                <NavLink name="Cerrar sesión" link="" classImg="d-none" targetLink=""/>
+
             </div>
         </div>
     </footer>
