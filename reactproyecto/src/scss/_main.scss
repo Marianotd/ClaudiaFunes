@@ -73,63 +73,62 @@ header, footer {
         border-bottom: 1px solid #eee;
         transition: all ease .2s;
 
-        &:hover {
-            font-weight: 500;
-            background: #e6cdc3;
-        }
-   
-        p {
-            margin: 0;
-            padding: 0;
-        }
-
-        @media all and (min-width: 768px) {
-            border: 1px solid #ccab7f;
-            border-radius: 35px;
-            font-size: .9rem;
-            color: #fff;
-            font-weight: 400;
-            transition: all ease .5s;
-
             &:hover {
-                background: #ccab7f;
-                font-weight: 700;
+                font-weight: 500;
+                background: #e6cdc3;
             }
-        }
-
-        @media all and (min-width: 1200px) {
-            position: relative;
-            
-            img {
-                max-width: 55px;
-                transition: all ease .6s;
+   
+            p {
+                margin: 0;
+                padding: 0;
             }
 
-            .textNav {
-                position: absolute;
-                top: 35%;
-                left: 0;
-                right: 0;
-                margin: auto;
+            @media all and (min-width: 768px) {
+                border: 1px solid #ccab7f;
+                border-radius: 35px;
+                font-size: .9rem;
                 color: #fff;
-                opacity: 0;
-                transition: all ease .6s;
+                font-weight: 400;
+                transition: all ease .5s;
+
+                &:hover {
+                    background: #ccab7f;
+                    font-weight: 700;
+                }
             }
 
-            &:hover {              
+            @media all and (min-width: 1200px) {
+                position: relative;
+            
                 img {
-                    opacity: .2;
+                    max-width: 55px;
+                    transition: all ease .6s;
                 }
 
                 .textNav {
-                    opacity: 1;
-                    transform: scale(1.2);
+                    position: absolute;
+                    top: 35%;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    color: #fff;
+                    opacity: 0;
+                    transition: all ease .6s;
+                }
+
+                &:hover {              
+                    img {
+                        opacity: .2;
+                    }
+
+                    .textNav {
+                        opacity: 1;
+                        transform: scale(1.2);
+                    }
                 }
             }
         }
-        
     }
-}
 
     @media all and (min-width: 768px) {
         background: #ccab7f;
@@ -174,77 +173,7 @@ header, footer {
     }
 }
 
-// INDEX CATEGORIAS
-.categoriasBody {
-    background-image: url(https://lunalogia.com/wp-content/uploads/2021/08/Lunalogia-academia-carta-natal-astro-talleres-cursos-consciencia2.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    a {
-        text-decoration: none;
-        color: #63615E;
-
-        img {
-            transition: all ease .6s;
-
-            &:hover {
-                transform: scale(1.1);
-            }
-        }
-
-        p {
-            font-family: 'Merriweather Sans', sans-serif;
-        }
-    }
-}
-
-// INDEX BIOGRAFÍA
-.biografia {
-    h5 {
-        font-size: 2.5rem;
-        color: #63615E;
-    }
-
-    p {
-        font-size: .9rem;
-
-        @media all and (min-width: 768px) {
-            text-align: center;
-        }
-    }
-}
-
-// ILUSTRACIONES MENU
-.menuIlustraciones {
-    button {
-        background-color: #fff;
-        border: none;
-        border-top: 2px solid #ccab7f;
-        border-bottom: 2px solid #ccab7f;
-        color: #63615E;
-        transition: all ease .5s;
-        width: 35%;
-
-        &:hover {
-            color: #363634;
-            background-color: rgba(204, 171, 127, .15);
-        }
-
-        &:active {
-            transform: translateY(.4px);
-        }
-
-        @media all and (min-width: 768px) {
-            width: 30%;
-        }
-
-        @media  all and (min-width: 1200px) {
-            width: 12%;
-        }
-    }
-}
-
+// ILUSTRACIONES
 .sectionTitle {
     font-size: 2.5rem;
     color: #63615E;
@@ -254,6 +183,7 @@ header, footer {
     .productos {
         border-radius: 10px;
         width: 70%;
+        max-width: 320px;
         transition: all ease .5s;
         
         &:hover {
@@ -266,10 +196,10 @@ header, footer {
         }
 
         @media all and (min-width: 1200px) {
-            width: 22.5%;
-        }
+            width: 26%;
+        } 
 
-        button {
+        .buttonAdd {
             width: 35%;
             border: 1px solid #ffc16f;
             color: #fff;
@@ -288,21 +218,27 @@ header, footer {
                 transform: scale(0.9);
             }
         }
-    }
-}
 
-.irArriba {
-    border: none;
-    border-radius: 35px;
-    background-color: rgba(255, 255, 255, .5);
-    color: rgba(204, 171, 127, .5);
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    transition: all ease .5s;
+        .cantContainer {
+            border: 1px solid rgba($color: #ccc, $alpha: 0.3);
+            border-radius: 35px;
 
-    &:hover {
-        color: rgba(204, 171, 127, 1);
+            .buttonCant {
+                color: #fff;
+                font-size: 1.5rem;
+                font-weight: 500;
+                border: 1px solid #eeae5a;
+                background-color: #eeae5a;
+                border-radius: 100%;
+                transition: all ease .3s;
+
+                &:active {
+                    transform: scale(.9);
+                }
+            }
+        }
+
+
     }
 }
 

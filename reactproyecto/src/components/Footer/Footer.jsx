@@ -35,7 +35,6 @@ export default function Footer() {
                 <NavLink name="Mis cursos"    link="" classImg="d-none" targetLink=""/>
                 <NavLink name="Contacto"      link="" classImg="d-none" targetLink=""/>
                 <NavLink name="Cerrar sesión" link="" classImg="d-none" targetLink=""/>
-
             </div>
         </div>
     </footer>

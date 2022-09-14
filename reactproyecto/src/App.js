@@ -1,16 +1,18 @@
+/* Bootstrap y CSS */
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './scss/styles.css'
+/* Componentes */
 import NavBar from './components/NavBar/NavBar'
-import DivProductos from './components/Productos/ProductContainer';
 import Portada from './components/Portada/Portada';
 import Footer from './components/Footer/Footer';
+import ProductContainer from './components/Productos/ProductContainer';
 
 function App() {
   return (
     <>
       <NavBar/>  
       <Portada/>
-      <DivProductos/>
+      <ProductContainer/>
       <Footer/>
     </>
   );
