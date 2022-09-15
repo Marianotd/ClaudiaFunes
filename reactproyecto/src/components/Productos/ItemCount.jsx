@@ -2,7 +2,6 @@ import React, {useState} from 'react'
 
 export default function ItemCount({initial, stock}) {
     const [cantCount, setCantCount] = useState(initial)
-    let acumulador = 0
 
     function cantAdd() {
         if(cantCount < stock ) {
@@ -21,7 +20,6 @@ export default function ItemCount({initial, stock}) {
             setCantCount(initial)
         }
     }
-
 
   return (
     <>

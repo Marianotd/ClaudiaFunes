@@ -24,7 +24,7 @@ export default function NavBar() {
                     <NavLinkCarrito/>
                 </div>
 
-                <Collapse className='collapseNav' in={open}>
+                <Collapse className='collapseNav mt-3' in={open}>
                     <div className="collapse col-12 col-md-9 d-md-flex flex-row align-items-md-center" id="navHeader">
                         <nav className="col-12 d-flex flex-row flex-wrap justify-content-evenly align-items-center">
                             <NavLink name="Ilustraciones" link="ilustraciones.html" img={NavLinkImg}  classTxt="textNav" classImg="d-none d-xl-inline-block img-fluid" classLink="col-12 col-md-2 text-center py-3 p-md-1"/>

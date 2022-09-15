@@ -1,14 +1,16 @@
 import React from 'react'
 import NavLink from '../NavBar/NavLink'
-import LogoImg from './Logo.png'
+import Logo from '../Logo/Logo'
+
 
 export default function Footer() {
   return (
         <footer> 
         <div className="divFooter d-flex flex-row flex-wrap align-items-center justify-content-around justify-content-xl-evenly text-center p-4 gap-2">
-            <div className="col-12 mb-4">
-                <img src={LogoImg} className="img img-fluid col-2 col-md-1" alt="Logo"/>
+            <div className='col-12 mb-4'>
+                <Logo/>
             </div>
+            
 
             <div className="d-flex flex-column gap-2">
                 <h5 className="mb-3">Redes sociales</h5>
