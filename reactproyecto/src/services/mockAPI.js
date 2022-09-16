@@ -3,7 +3,7 @@ const data = [
         id: 1,
         name: 'Arcano el Carro',
         img: '/assets/productos/ArcanoElCarro.jpg',
-        stock: 0,
+        stock: 20,
         description: '',
         price: 500
     },
@@ -30,7 +30,7 @@ const data = [
         id: 4,
         name: 'Arquetipo Oro',
         img: '/assets/productos/ArquetipoOro.jpg',
-        stock: 3,
+        stock: 6,
         description: '',
         price: 500
     },
@@ -46,9 +46,9 @@ const data = [
 ]
 
 export default function getItems() {
-    return new Promise((resolve, reject) => {
+    return new Promise((res, rej) => {
         setTimeout(() => {
-            resolve(data)
+            res(data)
         }, 2000);
     })
 }

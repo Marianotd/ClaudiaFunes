@@ -5,13 +5,13 @@ export default function ItemCount({initial, stock}) {
 
     function cantAdd() {
         if(cantCount < stock ) {
-            setCantCount(cantCount + 1)
+            setCantCount(cantCount + 2)
         }
     }
 
     function cantSustract() {
-        if(cantCount > 1 ) {
-            setCantCount(cantCount - 1)
+        if(cantCount > 2 ) {
+            setCantCount(cantCount - 2)
         }
     }
 
@@ -28,7 +28,10 @@ export default function ItemCount({initial, stock}) {
             <span className='spanCant col-6 text-center'>{cantCount}</span>
             <button className='buttonCant col-3' onClick={cantAdd}>+</button>
         </div>
-        <button className='buttonAdd py-1' onClick={onAdd}>Añadir</button>
+        <div className='col-10 d-flex flex-row align-items-center justify-content-around mt-3'>
+            <button className='buttonAdd py-1' onClick={onAdd}>Añadir</button>
+            <button className='buttonAdd py-1'>Ver más</button>
+        </div>
     </>
   )
 }

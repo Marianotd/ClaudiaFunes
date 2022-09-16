@@ -13,15 +13,18 @@ export default function ItemList() {
 
   return (
     <>
-      {data.map((item) => {
-        return(
-          <Item
-            key={item.id}
-            name={item.name}
-            img={item.img}
-            stock={item.stock}
-          />
-        )
+      {
+        data.map((item) => {
+          return(
+            <Item
+              key={item.id}
+              name={item.name}
+              img={item.img}
+              stock={item.stock}
+              price={item.price}
+              description={item.description}
+            />
+          )
         })
       }
     </>
