@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import getItems from '../../services/mockAPI'
-import Item from './Item'
+import Item from '../Item/Item'
 
 export default function ItemList() {
   const [data, setData] = useState([])
@@ -14,8 +14,7 @@ export default function ItemList() {
   return (
     <>
       {
-        data.map((item) => {
-          return(
+        data.map((item) => (
             <Item
               key={item.id}
               name={item.name}
@@ -24,8 +23,7 @@ export default function ItemList() {
               price={item.price}
               description={item.description}
             />
-          )
-        })
+        ))
       }
     </>
 

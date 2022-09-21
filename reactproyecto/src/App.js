@@ -5,14 +5,18 @@ import './scss/styles.css'
 import NavBar from './components/NavBar/NavBar'
 import Portada from './components/Portada/Portada';
 import Footer from './components/Footer/Footer';
-import ItemListContainer from './components/Productos/ItemListContainer';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+
+
 
 function App() {
   return (
     <>
       <NavBar/>  
       <Portada/>
-      <ItemListContainer/>
+      {/* <ItemListContainer/> */}
+      <ItemDetailContainer/>
       <Footer/>
     </>
   );

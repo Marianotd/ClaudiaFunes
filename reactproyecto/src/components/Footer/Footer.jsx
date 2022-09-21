@@ -1,7 +1,6 @@
 import React from 'react'
-import NavLink from '../NavBar/NavLink'
+import NavLink from '../NavLink/NavLink'
 import Logo from '../Logo/Logo'
-
 
 export default function Footer() {
   return (

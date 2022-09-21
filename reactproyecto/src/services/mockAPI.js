@@ -4,7 +4,7 @@ const data = [
         name: 'Arcano el Carro',
         img: '/assets/productos/ArcanoElCarro.jpg',
         stock: 20,
-        description: '',
+        description: 'Arcano el carro: -',
         price: 500
     },
 
@@ -13,7 +13,7 @@ const data = [
         name: 'Arquetipo Tierra',
         img: '/assets/productos/ArquetipoTierra.jpg',
         stock: 10,
-        description: '',
+        description: 'Arquertipo Tierra: -',
         price: 500
     },
 
@@ -22,7 +22,10 @@ const data = [
         name: 'Arquetipo Fuego',
         img: '/assets/productos/ArquetipoFuego.jpg',
         stock: 12,
-        description: '',
+        description: `El fuego modifica el estado de la materia, lo transmuta. Lo transforma. La pasión y acción. Este elemento lo exteriorizamos o vemos reflejado mediante el movimiento, la actividad, vitalidad y entusiasmo. Trata de la energía existencial y sexual. En exceso, puede abrasar.
+        Es un elemento masculino. Energia Yan.
+        
+        Habla de personas o situaciones las cuales son espontáneas e impulsivas, aplican su energía con todo su corazón. Su repuesta emocional es rápida y tienen una imaginación vivaz.`,
         price: 500
     },
 
@@ -31,7 +34,7 @@ const data = [
         name: 'Arquetipo Oro',
         img: '/assets/productos/ArquetipoOro.jpg',
         stock: 6,
-        description: '',
+        description: 'Arquetipo Oro: -',
         price: 500
     },
 
@@ -40,7 +43,7 @@ const data = [
         name: 'Arquetipo Aire',
         img: '/assets/productos/ArquetipoAire.jpg',
         stock: 8,
-        description: '',
+        description: 'Arquetipo Aire: -',
         price: 500
     },  
 ]
@@ -49,6 +52,20 @@ export default function getItems() {
     return new Promise((res, rej) => {
         setTimeout(() => {
             res(data)
+        }, 2000);
+    })
+}
+
+export function getSingleItem( idItem) {
+    return new Promise((res, rej) => {
+        setTimeout(() => {
+            let itemFind = data.find( item => item.id === idItem)
+            if(itemFind){
+                res(itemFind)
+            } else {
+                rej("Producto no encontrado")
+            }
+            
         }, 2000);
     })
 }

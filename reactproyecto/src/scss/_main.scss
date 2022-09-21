@@ -9,8 +9,8 @@ header, footer {
     background: #ffe7ce;
 }
 
-.logoHeader {
-
+// LOGO
+.logo {
     h3 {
         font-size: 1.1rem;
         font-family: 'Questrial', sans-serif;
@@ -36,7 +36,7 @@ header, footer {
 }
 
 // MENU HEADER
-.botonMenuHeader {
+.menuHeader {
     button {
         background: none;
         border: none;
@@ -144,7 +144,7 @@ header, footer {
     }
 }
 
-// INDEX PORTADA
+// PORTADA
 .portada {
     position: relative;
 
@@ -182,7 +182,7 @@ header, footer {
     }
 }
 
-// ILUSTRACIONES
+// ITEMS
 .sectionTitle {
     font-size: 2rem;
     color: #63615E;
@@ -190,8 +190,8 @@ header, footer {
     background-color: #fff;
 }
 
-.contProductos {
-    .productos {
+.itemListContainer {
+    .item {
         border-radius: 10px;
         width: 70%;
         max-width: 320px;
@@ -210,45 +210,146 @@ header, footer {
         @media all and (min-width: 1200px) {
             width: 26%;
         } 
+    }
+}
 
-        .buttonAdd {
-            width: 35%;
-            border: 1px solid #f7d3ad;
-            font-weight: 500;
-            color: #555;
-            border-radius: 10px;
-            background-color: #ffe7ce;
-            transition: all ease .5s;
+// ITEM DETAIL
+.itemDetailContainer {
+    background: rgba($color: #ffe7ce, $alpha: 0.2);
+
+    .itemDetail {
+        background: rgba($color: #fff, $alpha: 0.3);
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+
+        .itemDetail__buttonBack {
+            border: none;
+            background-color: rgba($color: #fff, $alpha: 0.3);
+            color: #63615E;
+            font-size: 2.5rem;
+            margin-right: 80%;
+            transition: all ease .2s;
 
             &:hover {
                 color: #eeae5a;
-                font-weight: 600;
-                background: #fff;
-            }
-
-            &:active {
-                transform: scale(0.9);
             }
         }
 
-        .cantContainer {
-            border: 1px solid rgba($color: #ccc, $alpha: 0.3);
-            border-radius: 35px;
+        .itemDetail__img {
+            width: 65%;
+            max-width: 300px;
 
-            .buttonCant {
-                color: #555;
-                font-size: 1.5rem;
-                font-weight: 500;
+            @media all and (min-width: 1200px) {
+                max-width: 400px;
+            }
+        }
+
+        .itemDetail__info {
+            .itemDetail__title {
+                font-family: 'Questrial', sans-serif;
+                color: #63615E;
+                font-size: 2.2rem;
+                font-weight: 600;
+    
+                @media all and (min-width: 768px) {
+                    font-size: 1.8rem;
+                }
+
+                @media all and (min-width: 1200px) {
+                    font-size: 2.8rem;
+                }
+            }
+    
+            .itemDetail__description {
+                font-size: .9rem;
+                font-weight: 300;
+                text-align: center;
+
+                @media all and (min-width: 768px){
+                    font-size: .85rem;
+                }
+
+                @media all and (min-width: 1200px){
+                    font-size: 1rem;
+                }
+            }
+    
+            .itemDetail__price {
+
+                @media all and (min-width: 768px) {
+                    font-size: .9rem;
+                }
+
+                @media all and (min-width: 1200px) {
+                    font-size: 1.1rem;
+                }
+
+                span {
+                    font-weight: 600;
+                }
+            }
+    
+            .itemCount {
+                border: 1px solid rgba($color: #ccc, $alpha: 0.3);
+                border-radius: 35px;
+    
+                .buttonCant {
+                    color: #555;
+                    font-size: 1.5rem;
+                    font-weight: 500;
+                    border: 1px solid #f7d3ad;
+                    background-color: #ffe7ce;
+                    border-radius: 100%;
+                    transition: all ease .3s;
+                    width: 2.5rem;
+    
+                    &:active {
+                        transform: scale(.9);
+                    }
+
+                    @media all and (min-width: 768px) {
+                        font-size: 1.2rem;
+                        width: 2rem;
+                    }
+
+                    @media all and (min-width: 1200px) {
+                        font-size: 1.5rem;
+                        width: 2.5rem;
+                    }
+                }
+            }
+    
+            .buttonAdd {
+                width: 35%;
                 border: 1px solid #f7d3ad;
+                font-weight: 500;
+                color: #555;
+                border-radius: 10px;
                 background-color: #ffe7ce;
-                border-radius: 100%;
-                transition: all ease .3s;
-
+                transition: all ease .5s;
+    
+                &:hover {
+                    color: #eeae5a;
+                    font-weight: 600;
+                    background: #fff;
+                }
+    
                 &:active {
-                    transform: scale(.9);
+                    transform: scale(0.9);
+                }
+
+                @media all and (min-width: 768px) {
+                    width: 30%;
+                }
+
+                @media all and (min-width: 1200px) {
+                    width: 40%;
                 }
             }
         }
+
+
     }
 }
 
