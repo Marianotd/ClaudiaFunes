@@ -34,7 +34,7 @@ const data = [
         name: 'Arquetipo Oro',
         img: '/assets/productos/ArquetipoOro.jpg',
         stock: 6,
-        description: 'Arquetipo Oro: -',
+        description: `Los oros se relacionan con el elemento Tierra. El fundamento del mundo material y de  los sentidos. Significa que realiza la función de equilibrar el ímpetu del Fuego, la razón de las Espadas, la emoción del Agua, para realizar algo tangible con todo ello. En las cartas de oro se materializan los frutos de nuestros esfuerzos, los bienes y las ganancias.`,
         price: 500
     },
 

@@ -6,7 +6,7 @@ export default function ItemDetailContainer() {
     const [data, setData] = useState({})
 
     useEffect( () => {
-        getSingleItem(3).then((responseData) => {
+        getSingleItem(4).then((responseData) => {
           setData(responseData)
         } )
       }, [])
