@@ -25,7 +25,7 @@ export default function ItemDetail({data}) {
         <p className='itemDetail__price'>Valor: <span>${data.price}</span> c/u</p>
         <ItemCount initial={2} stock={data.stock}/>
       </div>
-      <div className='description mt-4'>
+      <div className='description mt-4 col-12'>
         <h5 className='mb-3'>Disponible en acabado mate o brillante</h5>
         <p>Medidas: <span>{medidas} mm</span></p>
         <p>Color papel: <span>{color} o {color2}</span></p>
