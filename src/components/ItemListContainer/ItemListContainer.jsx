@@ -3,11 +3,11 @@ import ItemList from '../ItemList/ItemList'
 
 
 export default function ItemListContainer() {
-  let tit = "Ilustraciones"
+  let tit = "Novedades"
 
   return (
     <section>
-      <button className='sectionTitle my-2 ps-4'>{tit}</button>
+      <h2 className='sectionTitle mt-4 ps-4'>{tit}</h2>
       <div className="itemListContainer d-flex flex-row flex-wrap justify-content-evenly align-content-center p-4">
         <ItemList/>
       </div> 

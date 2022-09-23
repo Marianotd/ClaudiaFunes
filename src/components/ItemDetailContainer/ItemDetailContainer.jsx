@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 import { getSingleItem } from '../../services/mockAPI'
 import ItemDetail from '../ItemDetail/ItemDetail'
 
 export default function ItemDetailContainer() {
     const [data, setData] = useState({})
+    const { name } = useParams()
 
     useEffect( () => {
-        getSingleItem(4).then((responseData) => {
+        getSingleItem(name).then((responseData) => {
           setData(responseData)
         } )
       }, [])

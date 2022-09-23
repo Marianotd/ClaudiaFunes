@@ -11,6 +11,14 @@ header, footer {
 
 // LOGO
 .logo {
+    text-decoration: none;
+    color: #000;
+    transition: all ease .3s;
+
+    &:hover {
+        color: rgb(124, 124, 124);
+    }
+
     h3 {
         font-size: 1.1rem;
         font-family: 'Questrial', sans-serif;
@@ -319,37 +327,54 @@ header, footer {
                     }
                 }
             }
-    
-            .buttonAdd {
-                width: 35%;
-                border: 1px solid #f7d3ad;
-                font-weight: 500;
-                color: #555;
-                border-radius: 10px;
-                background-color: #ffe7ce;
-                transition: all ease .5s;
-    
-                &:hover {
-                    color: #eeae5a;
-                    font-weight: 600;
-                    background: #fff;
-                }
-    
-                &:active {
-                    transform: scale(0.9);
-                }
-
-                @media all and (min-width: 768px) {
-                    width: 30%;
-                }
-
-                @media all and (min-width: 1200px) {
-                    width: 40%;
-                }
-            }
         }
+    }
+}
 
+.buttonAdd {
+    text-decoration: none;
+    color: #555;
+    text-align: center;
+    width: 35%;
+    border: 1px solid #f7d3ad;
+    font-weight: 500; 
+    border-radius: 10px;
+    background-color: #ffe7ce;
+    transition: all ease .5s;
 
+    &:hover {
+        color: #eeae5a;
+        font-weight: 600;
+        background: #fff;
+    }
+
+    &:active {
+        transform: scale(0.9);
+    }
+
+    @media all and (min-width: 768px) {
+        width: 30%;
+    }
+
+    @media all and (min-width: 1200px) {
+        width: 40%;
+    }
+}
+
+.description {
+    text-align: center;
+
+    h5 {
+        font-size: .9rem;
+        font-weight: 600;
+    }
+
+    p {
+        font-size: .85rem;
+
+        span {
+            font-weight: 500;
+        }
     }
 }
 
@@ -368,7 +393,7 @@ header, footer {
         transition: all ease .4s;
 
         &:hover {
-            transform: scale(1.15);
+            transform: scale(1.05);
         }
     }
 }
