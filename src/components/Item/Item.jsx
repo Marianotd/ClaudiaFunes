@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 export default function Item({name, img}) {
-  const urlDetail = `/ilustraciones/${name}`
+  const urlDetail = `/ilustraciones/show/${name}`
 
   return (
     <div className='item d-flex flex-column align-items-center justify-content-evenly gap-2 pb-3 mb-4'>

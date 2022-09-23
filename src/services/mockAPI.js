@@ -77,8 +77,8 @@ export default function getItems() {
 export function getItemsByCategory(cat) {
     return new Promise((res, rej) => {
         setTimeout(() => {
-            let itemsFind = data.filter( item => item.category === cat)
-            res(data)
+            let itemsFind = data.filter( item => item.novelty == cat)
+            res(itemsFind)
         }, 2000);
     })
 }
