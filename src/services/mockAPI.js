@@ -6,7 +6,7 @@ const data = [
         stock: 20,
         description: 'Arcano el carro: -',
         price: 500,
-        category: 'ilustraciones',
+        category: 'Ilustraciones',
         category2: 'blanco y negro',
         novelty: true
     },
@@ -20,7 +20,7 @@ const data = [
         Su elemento es el Agua y su facultad el AMOR, el sentimiento, la ilusión y la fe. Pero su problema es el desbordamiento emocional.
         Meditar con este arquetipo puede ayudar a mantener un equilibrio en la salud emocional. Puede facilitar encontrar mucha alegría, felicidad y amor.`,
         price: 500,
-        category: 'ilustraciones',
+        category: 'Ilustraciones',
         category2: 'blanco y negro',
         novelty: true
     },
@@ -35,7 +35,7 @@ const data = [
         
         Habla de personas o situaciones las cuales son espontáneas e impulsivas, aplican su energía con todo su corazón. Su repuesta emocional es rápida y tienen una imaginación vivaz.`,
         price: 500,
-        category: 'ilustraciones',
+        category: 'Ilustraciones',
         category2: 'blanco y negro',
         novelty: false
     },
@@ -47,7 +47,7 @@ const data = [
         stock: 6,
         description: `Los oros se relacionan con el elemento Tierra. El fundamento del mundo material y de  los sentidos. Significa que realiza la función de equilibrar el ímpetu del Fuego, la razón de las Espadas, la emoción del Agua, para realizar algo tangible con todo ello. En las cartas de oro se materializan los frutos de nuestros esfuerzos, los bienes y las ganancias.`,
         price: 500,
-        category: 'ilustraciones',
+        category: 'Ilustraciones',
         category2: 'blanco y negro',
         novelty: true
     },
@@ -60,7 +60,7 @@ const data = [
         description: `LAS ESPADAS:
         Su elemento es el Aire y  el pensamiento. Cuando éste funciona debidamente, goza de claridad. Las cartas de espadas nos revelan lo tenso de la mente humana, engaños y autoengaños; las luchas y el sufrimiento. Así como también representa la victoria, la fuerza mental, la justicia, la claridad y el pensamiento creativo. Una gran idea o una inspiración a la creatividad.`,
         price: 500,
-        category: 'ilustraciones',
+        category: 'Ilustraciones',
         category2: 'blanco y negro',
         novelty: false
     },  
@@ -77,8 +77,13 @@ export default function getItems() {
 export function getItemsByCategory(cat) {
     return new Promise((res, rej) => {
         setTimeout(() => {
-            let itemsFind = data.filter( item => item.novelty == cat)
-            res(itemsFind)
+            if(cat === true){
+                let itemsFind = data.filter( item => item.novelty == cat)
+                res(itemsFind)
+            } else {
+                let itemsFind = data.filter( item => item.category == cat)
+                res(itemsFind)
+            }
         }, 2000);
     })
 }

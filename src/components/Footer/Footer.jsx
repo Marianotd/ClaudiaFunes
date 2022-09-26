@@ -22,11 +22,11 @@ export default function Footer() {
 
             <div className="d-flex flex-column gap-2">
                 <h5 className="mb-3">Categorias</h5>
-                <NavLink name="Ilustraciones" link="/" classImg="d-none" targetLink="_blank"/>
-                <NavLink name="Tarot"         link="/tarot"         classImg="d-none" targetLink="_blank"/>
-                <NavLink name="Astrología"    link="/astrologia"    classImg="d-none" targetLink="_blank"/>
-                <NavLink name="Cursos"        link="/cursos"        classImg="d-none" targetLink="_blank"/>
-                <NavLink name="Tatuajes"      link="/tatuajes"      classImg="d-none" targetLink="_blank"/>
+                <NavLink name="Ilustraciones" link="/Ilustraciones" classImg="d-none" targetLink="_blank"/>
+                <NavLink name="Tarot"         link="/Tarot"         classImg="d-none" targetLink="_blank"/>
+                <NavLink name="Astrología"    link="/Astrologia"    classImg="d-none" targetLink="_blank"/>
+                <NavLink name="Cursos"        link="/Cursos"        classImg="d-none" targetLink="_blank"/>
+                <NavLink name="Tatuajes"      link="/Tatuajes"      classImg="d-none" targetLink="_blank"/>
             </div>
 
             <div className="d-flex flex-column gap-2">

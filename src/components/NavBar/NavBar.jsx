@@ -27,12 +27,12 @@ export default function NavBar() {
                 <Collapse className='mt-3' in={open}>
                     <div className="collapse col-12 col-md-9 d-md-flex flex-row align-items-md-center">
                         <nav className="col-12 d-flex flex-row flex-wrap justify-content-evenly align-items-center">
-                            <NavLink name="Ilustraciones" link="/" img={NavLinkImg}  classTxt="textNav" classImg="d-none d-xl-inline-block img-fluid" classLink="col-12 col-md-2 text-center py-3 p-md-1"/>
-                            <NavLink name="Tarot"         link="/tarot"         img={NavLinkImg}  classTxt="textNav" classImg="d-none d-xl-inline-block img-fluid" classLink="col-12 col-md-2 text-center py-3 p-md-1"/>
-                            <NavLink name="Astrología"    link="/astrologia"    img={NavLinkImg}  classTxt="textNav" classImg="d-none d-xl-inline-block img-fluid" classLink="col-12 col-md-2 text-center py-3 p-md-1"/>
-                            <NavLink name="Cursos"        link="/cursos"        img={NavLinkImg}  classTxt="textNav" classImg="d-none d-xl-inline-block img-fluid" classLink="col-12 col-md-2 text-center py-3 p-md-1"/>
-                            <NavLink name="Tatuajes"      link="/tatuajes"      img={NavTatuajes} classTxt="textNav" classImg="d-none d-xl-inline-block img-fluid" classLink="col-12 col-md-2 text-center py-3 p-md-1"/>
-                            <NavLink name="Contacto"      link="/contacto"      img=""            classTxt=""        classImg="d-none"                             classLink="col-12 col-md-2 text-center py-3 p-md-1"/>
+                            <NavLink name="Ilustraciones" link="/Ilustraciones" img={NavLinkImg}  classTxt="textNav" classImg="d-none d-xl-inline-block img-fluid" classLink="col-12 col-md-2 text-center py-3 p-md-1"/>
+                            <NavLink name="Tarot"         link="/Tarot"         img={NavLinkImg}  classTxt="textNav" classImg="d-none d-xl-inline-block img-fluid" classLink="col-12 col-md-2 text-center py-3 p-md-1"/>
+                            <NavLink name="Astrología"    link="/Astrologia"    img={NavLinkImg}  classTxt="textNav" classImg="d-none d-xl-inline-block img-fluid" classLink="col-12 col-md-2 text-center py-3 p-md-1"/>
+                            <NavLink name="Cursos"        link="/Cursos"        img={NavLinkImg}  classTxt="textNav" classImg="d-none d-xl-inline-block img-fluid" classLink="col-12 col-md-2 text-center py-3 p-md-1"/>
+                            <NavLink name="Tatuajes"      link="/Tatuajes"      img={NavTatuajes} classTxt="textNav" classImg="d-none d-xl-inline-block img-fluid" classLink="col-12 col-md-2 text-center py-3 p-md-1"/>
+                            <NavLink name="Contacto"      link="/Contacto"      img=""            classTxt=""        classImg="d-none"                             classLink="col-12 col-md-2 text-center py-3 p-md-1"/>
                         </nav>
                     </div>
                 </Collapse>

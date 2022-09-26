@@ -17,13 +17,8 @@ function App() {
       
       <Routes>
         <Route path='/' element={<> <Portada/> <ItemListContainer/> </>}/>
-        <Route path='/ilustraciones' element={<ItemListContainer/>}/>
-        <Route path='/ilustraciones/show/:name' element={<ItemDetailContainer/>}/>
-        <Route path='/tarot' element={<h1>Sitio en construcción</h1>}/>
-        <Route path='/astrologia' element={<h1>Sitio en construcción</h1>}/>
-        <Route path='/cursos' element={<h1>Sitio en construcción</h1>}/>
-        <Route path='/tatuajes' element={<h1>Sitio en construcción</h1>}/>
-        <Route path='/contacto' element={<h1>Sitio en construcción</h1>}/>        
+        <Route path='/:cat' element={<ItemListContainer/>}/>
+        <Route path='/:cat/:name' element={<ItemDetailContainer/>}/>       
         <Route path='/cart' element={<h1>Sitio en construcción</h1>}/>
         <Route path='*' element={<h1>404 NOT FOUND</h1>}/>
       </Routes>

@@ -5,21 +5,20 @@ import Item from '../Item/Item'
 
 export default function ItemList() {
   const [data, setData] = useState([])
-  let cat = useParams()
+  let {cat} = useParams()
 
   useEffect( () => {
-    console.log(cat)
-    if(Object.keys(cat).length === 0) {
+    if(cat === undefined) {
       cat = true
       getItemsByCategory(cat).then((responseData) => {
         setData(responseData)
       } )
     } else {
-      getItems().then((responseData) => {
+      getItemsByCategory(cat).then((responseData) => {
         setData(responseData)
       } )
     }
-  }, [])
+  }, [cat])
 
   return (
     <>
@@ -32,6 +31,7 @@ export default function ItemList() {
               stock={item.stock}
               price={item.price}
               description={item.description}
+              category={item.category}
             />
         ))
       }
