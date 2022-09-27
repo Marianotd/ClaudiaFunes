@@ -1,5 +1,7 @@
 import React from 'react'
+/* Iconos */
 import { BiShoppingBag } from 'react-icons/bi';
+/* Router */
 import { Link } from 'react-router-dom';
 
 export default function NavLinkCarrito() {

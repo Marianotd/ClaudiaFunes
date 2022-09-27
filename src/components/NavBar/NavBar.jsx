@@ -1,13 +1,13 @@
-/* Import Bootstrap */
-import { useState } from 'react';
+import React, { useState } from 'react';
+/* Bootstrap */
 import Collapse from 'react-bootstrap/Collapse';
-/* Import Iconos - Logo */
+/* Iconos */
 import { CgMenu } from 'react-icons/cg';
+/* Componentes */
 import Logo from '../Logo/Logo';
-/* Import Componentes */
 import NavLink from '../NavLink/NavLink';
 import NavLinkCarrito from '../NavLinkCarrito/NavLinkCarrito';
-/* Import Imagenes */
+/* Imagenes */
 import NavLinkImg from '../NavLink/NavLinkImg.png';
 import NavTatuajes from '../NavLink/NavTatuajes.png';
 

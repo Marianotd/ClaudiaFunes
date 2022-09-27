@@ -1,19 +1,43 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+/* Router */
 import { useParams } from 'react-router-dom'
+/* Componentes */
 import ItemList from '../ItemList/ItemList'
+/* MockAPI */
+import { getItemsByCategory } from '../../services/mockAPI'
+/* Spiner */
+import { FadeLoader } from "react-spinners";
 
 export default function ItemListContainer() {
-  let {cat} = useParams()
-  
-  if(cat === undefined){
-    cat = 'Novedades'
-  }
+  const [data, setData] = useState([])
+  const [loading, setLoading] = useState(true);
+  let { cat } = useParams()
+  let title = cat === undefined ? 'Novedades' : cat
+
+  useEffect( () => {
+    setLoading(true)
+
+    if(cat === undefined) {
+      cat = true
+      getItemsByCategory(cat).then((responseData) => {
+        setData(responseData)
+        setLoading(false)
+      } )
+    } else {
+      getItemsByCategory(cat).then((responseData) => {
+        setData(responseData)
+        setLoading(false)
+      } )
+    }
+  }, [cat])
+
 
   return (
     <section>
-      <h2 className='sectionTitle mt-4 ps-4'>{cat}</h2>
-      <div className="itemListContainer d-flex flex-row flex-wrap justify-content-evenly align-content-center p-4">
-        <ItemList/>
+      <h2 className='sectionTitle mt-4 ps-4'>{title}</h2>
+      <div className="itemListContainer d-flex flex-row flex-wrap justify-content-evenly align-content-center p-4 my-5">
+        <FadeLoader color={'#ccc'} loading={loading} size={150} height={35} width={7.5} radius={35} margin={25} />
+        <ItemList data={data}/>
       </div> 
     </section>
   )

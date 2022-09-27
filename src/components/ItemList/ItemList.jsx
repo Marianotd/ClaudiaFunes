@@ -1,25 +1,8 @@
-import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-import getItems, { getItemsByCategory } from '../../services/mockAPI'
+import React from 'react'
+/* Componentes */
 import Item from '../Item/Item'
 
-export default function ItemList() {
-  const [data, setData] = useState([])
-  let {cat} = useParams()
-
-  useEffect( () => {
-    if(cat === undefined) {
-      cat = true
-      getItemsByCategory(cat).then((responseData) => {
-        setData(responseData)
-      } )
-    } else {
-      getItemsByCategory(cat).then((responseData) => {
-        setData(responseData)
-      } )
-    }
-  }, [cat])
-
+export default function ItemList({ data }) {
   return (
     <>
       {
