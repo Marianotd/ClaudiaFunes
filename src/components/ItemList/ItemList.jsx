@@ -11,7 +11,6 @@ export default function ItemList({ data }) {
               key={item.id}
               name={item.name}
               img={item.img}
-              stock={item.stock}
               price={item.price}
               description={item.description}
               category={item.category}

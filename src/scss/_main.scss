@@ -331,7 +331,7 @@ header, footer {
     }
 }
 
-.buttonAdd {
+.itemButton {
     text-decoration: none;
     color: #555;
     text-align: center;
@@ -341,6 +341,11 @@ header, footer {
     border-radius: 10px;
     background-color: #ffe7ce;
     transition: all ease .5s;
+
+    &--large {
+        width:75%;
+        max-width: 200px;
+    }
 
     &:hover {
         color: #eeae5a;
@@ -354,6 +359,10 @@ header, footer {
 
     @media all and (min-width: 768px) {
         width: 30%;
+
+        &--large {
+            width: 60%;
+        }
     }
 
     @media all and (min-width: 1200px) {

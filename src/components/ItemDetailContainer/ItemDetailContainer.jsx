@@ -22,7 +22,7 @@ export default function ItemDetailContainer() {
 
   return (
     <div className='itemDetailContainer p-4'>
-        <ItemDetail loading={loading} data = {data} medidas={'297 x 420'} color={'Blanco'} color2={'Negro'} tinta={'Negro y Dorado'} tinta2={'Negro y Tornasol'} />
+        <ItemDetail loading={loading} data={data} initial={2} medidas={'297 x 420'} color={'Blanco'} color2={'Negro'} tinta={'Negro y Dorado'} tinta2={'Negro y Tornasol'} />
     </div>
 
   )
