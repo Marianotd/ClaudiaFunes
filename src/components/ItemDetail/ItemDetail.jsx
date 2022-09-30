@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 /* Componentes */
 import ItemCount from '../ItemCount/ItemCount'
 import ButtonAdd from '../ButtonAdd/ButtonAdd';
@@ -8,10 +8,13 @@ import { CgArrowLeftO } from 'react-icons/cg'
 import { Link } from 'react-router-dom'
 /* Spiner */
 import { FadeLoader } from "react-spinners";
+/* Context */
+import { CartContext } from '../../context/CartContext';
 
-export default function ItemDetail({loading, data, initial, medidas, color, color2, tinta, tinta2}) {
+export default function ItemDetail({ loading, data, initial, medidas, color, color2, tinta, tinta2 }) {
   const [cantCount, setCantCount] = useState(initial)
   const [state, setState] = useState(true)
+  const { addItem } = useContext(CartContext)
 
   function cantAdd() {
     if(cantCount < data.stock ) {
@@ -26,9 +29,11 @@ export default function ItemDetail({loading, data, initial, medidas, color, colo
   }
 
   function onAddToCart(){
+    setCantCount(initial)
       if(data.stock > 0) {
           setState(false)
       }
+    addItem(data, cantCount)
   }
 
   return (

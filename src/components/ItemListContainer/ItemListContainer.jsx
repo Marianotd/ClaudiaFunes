@@ -7,6 +7,7 @@ import ItemList from '../ItemList/ItemList'
 import { getItemsByCategory } from '../../services/mockAPI'
 /* Spiner */
 import { FadeLoader } from "react-spinners";
+import SwiperNovs from '../SwiperNovs/SwiperNovs';
 
 export default function ItemListContainer() {
   const [data, setData] = useState([])
@@ -35,9 +36,20 @@ export default function ItemListContainer() {
   return (
     <section>
       <h2 className='sectionTitle mt-4 ps-4'>{title}</h2>
-      <div className="itemListContainer d-flex flex-row flex-wrap justify-content-evenly align-content-center p-4 my-5">
-        <FadeLoader color={'#ccc'} loading={loading} size={150} height={35} width={7.5} radius={35} margin={25} />
-        <ItemList data={data}/>
+      <div className="itemListContainer d-flex flex-row flex-wrap justify-content-evenly align-content-center p-4 my-3">
+        {
+          title == 'Novedades'
+          ? <>
+            <div className='col-12 d-flex justify-content-center'>
+              <FadeLoader color={'#ccc'} loading={loading} size={150} height={35} width={7.5} radius={35} margin={25} />
+            </div>
+              <SwiperNovs data={data}/>
+            </> 
+          : <>
+              <FadeLoader color={'#ccc'} loading={loading} size={150} height={35} width={7.5} radius={35} margin={25} />
+              <ItemList data={data}/>
+            </>
+        }
       </div> 
     </section>
   )

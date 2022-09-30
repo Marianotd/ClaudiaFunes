@@ -199,12 +199,38 @@ header, footer {
 }
 
 .itemListContainer {
+    .swiper-container {
+        width: 480px;
+
+        @media screen and (min-width: 768px) {
+            width: 768px;
+        }
+
+        @media screen and (min-width: 1200px) {
+            width: 1200px;
+        }
+    }
+      
+    .swiper-pagination {
+        bottom: 0;
+        padding-bottom: 10px;
+
+        span {
+            background-color: #ffe7ce;
+        }
+    }
+
+    .swiper-button-prev, .swiper-button-next {
+        color: #ffe7ce;
+    }
+
     .item {
         border-radius: 10px;
         width: 70%;
         max-width: 320px;
+        max-height: 550px;
         transition: all ease .5s;
-        margin: 0 2rem;
+        margin: auto;
         
         &:hover {
             box-shadow: 0px 0px 10px 1px #ffe7ce;
@@ -218,6 +244,12 @@ header, footer {
         @media all and (min-width: 1200px) {
             width: 26%;
         } 
+
+        &--slide {
+            @media all and (min-width: 768px){
+                width: 100%;
+            }
+        }
     }
 }
 

@@ -6,7 +6,8 @@ import { CgMenu } from 'react-icons/cg';
 /* Componentes */
 import Logo from '../Logo/Logo';
 import NavLink from '../NavLink/NavLink';
-import NavLinkCarrito from '../NavLinkCarrito/NavLinkCarrito';
+import CartWidget from '../CartWidget/CartWidget';
+
 /* Imagenes */
 import NavLinkImg from '../NavLink/NavLinkImg.png';
 import NavTatuajes from '../NavLink/NavTatuajes.png';
@@ -21,7 +22,7 @@ export default function NavBar() {
 
                 <div className="menuHeader order-md-2 col-5 col-md-1 d-flex align-items-center justify-content-around justify-content-md-center">                   
                     <button className='d-md-none' type="button" onClick={() => setOpen(!open)}><CgMenu className='menuHamburguesa'/></button>      
-                    <NavLinkCarrito/>
+                    <CartWidget/>
                 </div>
 
                 <Collapse className='mt-3' in={open}>
