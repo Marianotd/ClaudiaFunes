@@ -64,20 +64,37 @@ header, footer {
         }
     }  
 
-    .cartIcon {
-        font-size: 2rem;
-        color: #000;
-        cursor: pointer;
-        transition: all ease .5s;
+    .cartWidget{
+        position: relative;
 
-        &:hover {
-            transform: scale(1.15);
+        .cartIcon {
+            font-size: 2rem;
+            color: #000;
+            cursor: pointer;
+            transition: all ease .5s;
+    
+            &:hover {
+                transform: scale(1.15);
+            }
+    
+            @media all and (min-width: 768px) {
+                font-size: 1.5rem;
+            }
         }
-
-        @media all and (min-width: 768px) {
-            font-size: 1.5rem;
+    
+        .cartNumber {
+            position: absolute;
+            top: 0;
+            right: 10%;
+            width: 2rem;
+            border-radius: 50px;
+            font-size: .85rem;
+            color: #fff;
+            background: red;
         }
     }
+
+
 }
 
 // NAV HEADER
