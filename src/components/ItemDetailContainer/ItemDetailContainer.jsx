@@ -8,7 +8,7 @@ import ItemDetail from '../ItemDetail/ItemDetail'
 
 export default function ItemDetailContainer() {
     const [data, setData] = useState({})
-    let [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(true);
     const { name } = useParams()
 
     useEffect( () => {

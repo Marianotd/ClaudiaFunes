@@ -66,16 +66,17 @@ header, footer {
 
     .cartWidget{
         position: relative;
+        transition: all ease .3s;
+
+        &:hover {
+            transform: scale(1.1);
+        }
 
         .cartIcon {
             font-size: 2rem;
             color: #000;
             cursor: pointer;
-            transition: all ease .5s;
-    
-            &:hover {
-                transform: scale(1.15);
-            }
+            
     
             @media all and (min-width: 768px) {
                 font-size: 1.5rem;
@@ -84,13 +85,23 @@ header, footer {
     
         .cartNumber {
             position: absolute;
-            top: 0;
-            right: 10%;
-            width: 2rem;
-            border-radius: 50px;
-            font-size: .85rem;
-            color: #fff;
+            top: 10%;
+            left: 55%;
             background: red;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            font-size: .85rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            padding: 2px;
+
+            @media all and (min-width: 768px) {
+                top: 0;
+                left: 52%;
+            }
         }
     }
 
