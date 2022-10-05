@@ -104,8 +104,6 @@ header, footer {
             }
         }
     }
-
-
 }
 
 // NAV HEADER
@@ -180,7 +178,7 @@ header, footer {
     }
 }
 
-// PORTADA
+// PORTADA INICIO
 .portada {
     position: relative;
 
@@ -218,7 +216,7 @@ header, footer {
     }
 }
 
-// ITEMS
+// TITULO SECCIONES
 .sectionTitle {
     font-size: 2rem;
     color: #63615E;
@@ -226,6 +224,7 @@ header, footer {
     background-color: #fff;
 }
 
+// CONTENEDOR PRODUCTOS
 .itemListContainer {
     .swiper-container {
         width: 480px;
@@ -252,6 +251,7 @@ header, footer {
         color: #ffe7ce;
     }
 
+    // PRODUCTOS
     .item {
         border-radius: 10px;
         width: 70%;
@@ -391,6 +391,8 @@ header, footer {
     }
 }
 
+
+// BOTONES PRODUCTOS
 .itemButton {
     text-decoration: none;
     color: #555;
@@ -405,6 +407,12 @@ header, footer {
     &--large {
         width:75%;
         max-width: 200px;
+    }
+
+    &--cart {
+        width: 30%;
+        height: 2.5rem;
+        max-width: 150px;
     }
 
     &:hover {
@@ -447,74 +455,185 @@ header, footer {
     }
 }
 
-.cartItem {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: space-around;
-    position: relative;
-
-    width: 85%;
-    height: 300px;
-    padding: 5px 0;
-    margin: auto;
-    border-radius: 10px;
-    border: 1px solid #fff; 
-    transition: all ease .5s;
-
-    &:hover {
-        border: 1px solid #eeae5a; 
-    }
-
-    .removeItem {
-        position: absolute;
-        top: 2.5%;
-        right: 2.5%;
-        background: #fff;
-        border: 1px solid #fff;
-        width: 25px;
-        height: 25px;
-        border-radius: 50%;
-        font-size: 1.5rem;
-        font-weight: 500;
+// CARRITO
+.cartListContainer {
+    @media all and (min-width: 1200px){
         display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #ccc;
-        transition: all ease .5s;
-
-        &:hover {
-            color: #444;
-        }
-    }
-
-    .cartItemDetail {
-        display: flex;
-        flex-flow: column wrap;
-        justify-content: end;
         align-items: flex-start;
+        justify-content: space-evenly;
+    }
+}
 
-        max-width: 40%;
-        height: 85%;
+// CARRITO CONTENEDOR ITEMS
+.cartList {
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 
-        h4 {
-            font-size: 1.8rem;
-            font-family: 'Questrial', sans-serif;
-            text-align: center;
-            margin-bottom: 2rem;
+    @media all and (min-width: 1200px) {
+        flex-flow: row wrap;
+        align-items: flex-start;
+    }
+
+    // PRODUCTO CARRITO
+    .cartListItem {
+        width: 100%;
+
+        @media all and (min-width: 1200px) {
+            width: 50%;
+        }
+    }
+
+    .cartItem {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-around;
+        position: relative;
+    
+        width: 85%;
+        max-width: 450px;
+        height: 300px;
+        padding: 5px 0;
+        margin: auto;
+        border-radius: 10px;
+        border: 1px solid #fff; 
+        transition: all ease .5s;
+    
+        &:hover {
+            border: 1px solid #eeae5a; 
         }
 
-        p {
-            font-weight: 600;
-            margin: 0;
+        @media all and (min-width: 768px) {
+            max-width: 550px;
+        }
 
-            span {
-                font-weight: 400;
+        @media all and (min-width: 1200px) {
+
+        }
+    
+        .removeItem {
+            position: absolute;
+            top: 2.5%;
+            right: 2.5%;
+            background: #fff;
+            border: 1px solid #fff;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: 500;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ccc;
+            transition: all ease .5s;
+    
+            &:hover {
+                color: #444;
+            }
+        }
+    
+        .cartItemDetail {
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: end;
+            align-items: flex-start;
+    
+            max-width: 40%;
+            height: 85%;
+    
+            h4 {
+                font-size: 1.8rem;
+                font-family: 'Questrial', sans-serif;
+                text-align: center;
+                margin-bottom: 2rem;
+            }
+    
+            p {
+                font-weight: 600;
+                margin: 0;
+    
+                span {
+                    font-weight: 400;
+                }
             }
         }
     }
 }
 
+// ASIDE CARRITO
+.cartAside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+// CARRITO VACIO
+.noItems {
+    height: 300px;
+    width: 100%;
+    margin: 2rem 0;
+    background-color: rgba($color: #000, $alpha: 0.05);
+    color: #bbb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; 
+
+    h2 {
+        font-size: .9rem;
+        font-weight: 500;
+    }
+
+    a {
+        color: #eeae5a;
+        transition: all ease .5s;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
+
+// SUMATORIA CARRITO
+.cartTotal {
+    width: 100%;
+    max-width: 500px;
+    background-color: rgba($color: #000, $alpha: 0.02);
+
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 10%;
+
+    @media all and (min-width: 1200px) {
+        max-width: 400px;
+    }
+
+    p, h3 {
+        width: 30%;
+        margin: 5px 0;
+        font-weight: 400;
+        color: #555;
+        font-size: .9rem;
+    }
+
+    h3, .spanTotal {
+        font-size: 1.5rem;
+    }
+
+    span {
+        font-weight: 500;
+        width: 30%;
+        text-align: center;
+    }
+}
 
 // FOOTER
 .divFooter {

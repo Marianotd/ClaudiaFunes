@@ -5,7 +5,7 @@ export default function CartItem({id, name, img, price, count}) {
   const { sustractItem } = useContext(cartContext)
 
   return (
-    <div className='cartItem'>
+    <div className='cartItem my-3'>
         <button className='removeItem' onClick={() => sustractItem(id)}>X</button>
         <img src={img} className="img-fluid h-100" alt={name}/>
         <div className='cartItemDetail'>

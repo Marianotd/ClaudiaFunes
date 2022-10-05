@@ -25,10 +25,9 @@ export default function CartContextProvider({ children }) {
 
     function sustractItem(id){
       const index = cart.findIndex( item => item.id === id)
-      console.log(cart)
-      console.log(index)
       cart.splice(index, 1)
-      console.log(cart)
+      const newCart = cart.map( item => item)
+      setCart(newCart)
     }
 
     function cartCount(){
@@ -37,13 +36,25 @@ export default function CartContextProvider({ children }) {
         return total
     }
 
+    function totalCount(){
+      let total = 0
+      cart.forEach(item => total += (item.price * item.count))
+      return total
+    }
+
     function isInCart(id){
       let found = cart.some(item => item.id === id)
       return found
     }
 
+    function clearCart(){
+      cart.splice(0, cart.length)
+      const newCart = cart.map( item => item)
+      setCart(newCart)
+    }
+
   return (
-    <cartContext.Provider value={{ cart, addItem, cartCount, sustractItem }}>
+    <cartContext.Provider value={{ cart, addItem, cartCount, sustractItem, totalCount, clearCart }}>
         {children}
     </cartContext.Provider>
   )
