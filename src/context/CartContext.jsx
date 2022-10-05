@@ -1,6 +1,6 @@
 import React, { useState, createContext } from 'react'
 
-const CartContext = createContext()
+const cartContext = createContext()
 
 export default function CartContextProvider({ children }) {
     const [cart, setCart] = useState([])
@@ -23,6 +23,14 @@ export default function CartContextProvider({ children }) {
       }
     }
 
+    function sustractItem(id){
+      const index = cart.findIndex( item => item.id === id)
+      console.log(cart)
+      console.log(index)
+      cart.splice(index, 1)
+      console.log(cart)
+    }
+
     function cartCount(){
         let total = 0
         cart.forEach(item => total += item.count)
@@ -35,10 +43,10 @@ export default function CartContextProvider({ children }) {
     }
 
   return (
-    <CartContext.Provider value={{ cart, addItem, cartCount }}>
+    <cartContext.Provider value={{ cart, addItem, cartCount, sustractItem }}>
         {children}
-    </CartContext.Provider>
+    </cartContext.Provider>
   )
 }
 
-export {CartContext}
+export {cartContext}

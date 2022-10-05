@@ -447,6 +447,75 @@ header, footer {
     }
 }
 
+.cartItem {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+
+    width: 85%;
+    height: 300px;
+    padding: 5px 0;
+    margin: auto;
+    border-radius: 10px;
+    border: 1px solid #fff; 
+    transition: all ease .5s;
+
+    &:hover {
+        border: 1px solid #eeae5a; 
+    }
+
+    .removeItem {
+        position: absolute;
+        top: 2.5%;
+        right: 2.5%;
+        background: #fff;
+        border: 1px solid #fff;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        font-weight: 500;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #ccc;
+        transition: all ease .5s;
+
+        &:hover {
+            color: #444;
+        }
+    }
+
+    .cartItemDetail {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: end;
+        align-items: flex-start;
+
+        max-width: 40%;
+        height: 85%;
+
+        h4 {
+            font-size: 1.8rem;
+            font-family: 'Questrial', sans-serif;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        p {
+            font-weight: 600;
+            margin: 0;
+
+            span {
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+
 // FOOTER
 .divFooter {
     h5 {

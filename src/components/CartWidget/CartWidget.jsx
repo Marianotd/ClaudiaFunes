@@ -3,11 +3,11 @@ import React, { useContext, useState, useEffect } from 'react'
 import { BiShoppingBag } from 'react-icons/bi';
 /* Router */
 import { Link } from 'react-router-dom';
-import { CartContext } from '../../context/CartContext';
+import { cartContext } from '../../context/CartContext';
 
 export default function CartWidget() {
   const [cantCount, setCantCount] = useState(0)
-  const { cartCount } = useContext(CartContext)
+  const { cartCount } = useContext(cartContext)
 
   useEffect( () => {
     setCantCount(cartCount())

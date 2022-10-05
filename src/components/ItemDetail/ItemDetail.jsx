@@ -9,12 +9,12 @@ import { Link } from 'react-router-dom'
 /* Spiner */
 import { FadeLoader } from "react-spinners";
 /* Context */
-import { CartContext } from '../../context/CartContext';
+import { cartContext } from '../../context/CartContext';
 
 export default function ItemDetail({ loading, data, initial, medidas, color, color2, tinta, tinta2 }) {
   const [cantCount, setCantCount] = useState(initial)
   const [state, setState] = useState(true)
-  const { addItem } = useContext(CartContext)
+  const { addItem } = useContext(cartContext)
 
   function cantAdd() {
     if(cantCount < data.stock ) {
