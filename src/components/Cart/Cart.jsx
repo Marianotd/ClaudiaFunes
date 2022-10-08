@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom'
 import { cartContext } from '../../context/CartContext'
 /* Componentes */
 import CartList from '../CartList/CartList'
-import CartItem from '../CartItem/CartItem'
 import CartTotal from '../CartTotal/CartTotal'
 import ClearCart from '../ClearCart/ClearCart'
+import ButtonCart from '../ButtonCart/ButtonCart'
 
 export default function Cart() {
   const [state, setState] = useState()
@@ -36,6 +36,7 @@ export default function Cart() {
             <div className='cartAside'>
               <ClearCart />
               <CartTotal />
+              <ButtonCart />
             </div>
           </>      
         }
