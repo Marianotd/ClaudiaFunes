@@ -33,6 +33,7 @@ export default function SwiperNovs({ data }) {
           <SwiperSlide key={item.id}>
             <Item
             key={item.id}
+            id={item.id}
             name={item.name}
             img={item.img}
             price={item.price}

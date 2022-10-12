@@ -3,11 +3,11 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 /* Componentes */
 import ItemList from '../ItemList/ItemList'
-/* MockAPI */
-import { getItemsByCategory } from '../../services/mockAPI'
 /* Spiner */
 import { FadeLoader } from "react-spinners";
 import SwiperNovs from '../SwiperNovs/SwiperNovs';
+/* Firestore */
+import { getItemsByCategory } from '../../services/firestore'
 
 export default function ItemListContainer() {
   const [data, setData] = useState([])
@@ -16,29 +16,18 @@ export default function ItemListContainer() {
   let title = cat === undefined ? 'Novedades' : cat
 
   useEffect( () => {
-    setLoading(true)
-
-    if(cat === undefined) {
-      cat = true
-      getItemsByCategory(cat).then((responseData) => {
-        setData(responseData)
-        setLoading(false)
-      } )
-    } else {
-      getItemsByCategory(cat).then((responseData) => {
-        setData(responseData)
-        setLoading(false)
-      } )
-    }
+    getItemsByCategory(cat).then((responseData) => {
+      setData(responseData)
+      setLoading(false)
+    } )
   }, [cat])
-
 
   return (
     <section>
       <h2 className='sectionTitle mt-4 ps-4'>{title}</h2>
       <div className="itemListContainer d-flex flex-row flex-wrap justify-content-evenly align-content-center p-4 my-3">
         {
-          title == 'Novedades'
+          title === 'Novedades'
           ? <>
             <div className='col-12 d-flex justify-content-center'>
               <FadeLoader color={'#ccc'} loading={loading} size={150} height={35} width={7.5} radius={35} margin={25} />

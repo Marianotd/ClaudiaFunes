@@ -1,24 +1,24 @@
 import React, { useState, useEffect } from 'react'
 /* Router */
 import { useParams } from 'react-router-dom'
-/* MockAPI */
-import { getSingleItem } from '../../services/mockAPI'
 /* Componentes */
 import ItemDetail from '../ItemDetail/ItemDetail'
+/* Firestore */
+import { getSingleItem } from '../../services/firestore'
 
 export default function ItemDetailContainer() {
     const [data, setData] = useState({})
     const [loading, setLoading] = useState(true);
-    const { name } = useParams()
+    const { id } = useParams()
 
     useEffect( () => {
       setLoading(true)
 
-      getSingleItem(name).then((responseData) => {
+      getSingleItem(id).then((responseData) => {
           setData(responseData)
           setLoading(false)
         } )
-      }, [])
+      }, [id])
 
   return (
     <div className='itemDetailContainer p-4'>
