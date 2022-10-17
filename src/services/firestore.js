@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, doc , getDoc, getDocs, query, where } from 'firebase/firestore'
+import { getFirestore, collection, doc , getDoc, getDocs, query, where ,addDoc, setDoc } from 'firebase/firestore'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -42,6 +42,12 @@ export async function getItemsByCategory(cat){
     return docFormateado
   })
   return dataDocs
+}
+
+export async function createBuyOrder(orderData){
+  const myColection = collection(firestore, 'orders')
+  let response = await addDoc(myColection, orderData)
+  return response.id
 }
 
 export default firestore

@@ -57,11 +57,7 @@ export default function ItemDetail({ loading, data, initial, medidas, color, col
                       <p className='itemDetail__price'>Valor: <span>${data.price}</span> c/u</p>
                       <ItemCount cantAdd={cantAdd} cantSustract={cantSustract} onAddToCart={onAddToCart} cantCount={cantCount} />
                     </>
-                  : <>
-                      <p className='itemDetail__price'>Cantidad seleccionada: <span>{cantCount}</span></p>
-                      <p className='itemDetail__price'>SubTotal: <span>${cantCount * data.price}</span></p>
-                      <ButtonAdd category={data.category}/>
-                    </>
+                  : <ButtonAdd category={data.category}/>
                 }
               </div>
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 /* Router */
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 /* Contexto */
 import { cartContext } from '../../context/CartContext'
 /* Componentes */
@@ -8,10 +8,13 @@ import CartList from '../CartList/CartList'
 import CartTotal from '../CartTotal/CartTotal'
 import ClearCart from '../ClearCart/ClearCart'
 import ButtonCart from '../ButtonCart/ButtonCart'
+/* Firestore */
+import { createBuyOrder } from '../../services/firestore'
 
 export default function Cart() {
   const [state, setState] = useState()
-  const { cart } = useContext(cartContext)  
+  const { cart, totalCount } = useContext(cartContext)  
+  const navigate = useNavigate()
 
   useEffect(() => {
     if(cart === undefined || cart.length == 0){
@@ -20,6 +23,19 @@ export default function Cart() {
       setState(false)
     }
   }, [cart])
+
+  function handleCheckOut(){
+    const orderData = {
+      buyer: {},
+      items: cart,
+      total: totalCount().total
+    }
+
+    createBuyOrder(orderId)
+      .then(orderId => {
+        navigate(`/cart/checkout/${orderId}`)
+      })
+  }
 
   return (
     <>
@@ -36,7 +52,7 @@ export default function Cart() {
             <div className='cartAside'>
               <ClearCart />
               <CartTotal />
-              <ButtonCart />
+              <ButtonCart handleCheckOut={handleCheckOut}/>
             </div>
           </>      
         }

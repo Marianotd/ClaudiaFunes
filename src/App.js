@@ -7,6 +7,7 @@ import Portada from './components/Portada/Portada';
 import Footer from './components/Footer/Footer';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import CheckOut from './components/CheckOut/CheckOut';
 /* Router */
 import { BrowserRouter , Routes, Route } from 'react-router-dom'
 import CartContextProvider from './context/CartContext';
@@ -23,6 +24,7 @@ function App() {
           <Route path='/:cat' element={<ItemListContainer/>}/>
           <Route path='/:cat/:id' element={<ItemDetailContainer/>}/>       
           <Route path='/cart' element={<Cart/>}/>
+          <Route path='/cart/checkout/:orderid' element={<CheckOut />} />
           <Route path='*' element={<h1>404 NOT FOUND</h1>}/>
         </Routes>
         
