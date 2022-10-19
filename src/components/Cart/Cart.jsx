@@ -8,16 +8,14 @@ import CartList from '../CartList/CartList'
 import CartTotal from '../CartTotal/CartTotal'
 import ClearCart from '../ClearCart/ClearCart'
 import ButtonCart from '../ButtonCart/ButtonCart'
-/* Firestore */
-import { createBuyOrder } from '../../services/firestore'
 
 export default function Cart() {
   const [state, setState] = useState()
-  const { cart, totalCount } = useContext(cartContext)  
   const navigate = useNavigate()
+  const { cart, totalCount } = useContext(cartContext)  
 
   useEffect(() => {
-    if(cart === undefined || cart.length == 0){
+    if(cart === undefined || cart.length === 0){
       setState(true)
     } else {
       setState(false)
@@ -25,17 +23,10 @@ export default function Cart() {
   }, [cart])
 
   function handleCheckOut(){
-    const orderData = {
-      buyer: {},
-      items: cart,
-      total: totalCount().total
-    }
-
-    createBuyOrder(orderId)
-      .then(orderId => {
-        navigate(`/cart/checkout/${orderId}`)
-      })
+    navigate(`/cart/checkout/`)
   }
+
+
 
   return (
     <>
@@ -52,7 +43,7 @@ export default function Cart() {
             <div className='cartAside'>
               <ClearCart />
               <CartTotal />
-              <ButtonCart handleCheckOut={handleCheckOut}/>
+              <ButtonCart handleCheckOut={handleCheckOut} />
             </div>
           </>      
         }

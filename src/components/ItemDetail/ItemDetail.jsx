@@ -41,7 +41,7 @@ export default function ItemDetail({ loading, data, initial, medidas, color, col
       { loading
           ? <div className='m-5'><FadeLoader color={'#ccc'} size={150} height={35} width={7.5} radius={35} margin={25} /></div>
           : <>
-              <Link to={`/${data.category}`} className='itemDetail__buttonBack'>
+              <Link to={`/${data.category}`} className='buttonBack'>
                 <CgArrowLeftO />
               </Link>
       

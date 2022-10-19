@@ -39,10 +39,9 @@ export default function CartContextProvider({ children }) {
     function totalCount(){
       let subTotal = 0
       cart.forEach(item => subTotal += (item.price * item.count))
-      let envio = subTotal >= 5000 ? "Gratis" : 500
-      let iva = (subTotal * 0.21)
-      let total = subTotal >= 5000 ? (subTotal + iva) : (subTotal + iva + envio)
-      return {subTotal, envio, iva, total}
+      let envio = subTotal >= 2000 ? "Gratis" : 250
+      let total = subTotal >= 2000 ? subTotal : (subTotal + envio)
+      return {subTotal, envio, total}
     }
 
     function isInCart(id){
