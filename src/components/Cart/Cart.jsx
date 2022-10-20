@@ -12,7 +12,7 @@ import ButtonCart from '../ButtonCart/ButtonCart'
 export default function Cart() {
   const [state, setState] = useState()
   const navigate = useNavigate()
-  const { cart, totalCount } = useContext(cartContext)  
+  const { cart } = useContext(cartContext)  
 
   useEffect(() => {
     if(cart === undefined || cart.length === 0){

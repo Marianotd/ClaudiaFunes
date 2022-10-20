@@ -635,10 +635,11 @@ header, footer {
     }
 }
 
+// FORMULARIO CARRITO
 .cartForm {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
 
     h2 {
@@ -661,14 +662,72 @@ header, footer {
 
     input {
         margin-bottom: 25px;
-        width: 85%;
+        width: 65%;
         max-width: 385px;
 
         border: 1px solid #ccc;
         border-radius: 35px;
         padding: 5px 20px;
+
+        color: #555;
+
+        &:focus {
+            border: 1px solid #eeae5a;
+            outline: none;
+        }
+
+        @media all and (min-width: 768px){
+
+        }
+    }
+
+    .alertForm {
+        display: inline-block;
+        color: red;
+        font-size: .85rem;
+        margin-bottom: 15px;
+        text-align: center;
+    
+        &--none {
+            display: none;
+        }
     }
 }
+
+// CHECKOUT
+.checkOut {
+    min-height: 50vh;
+    background-color: rgba($color: #000, $alpha: 0.03);
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    @media all and (min-width: 768px){
+        min-height: 70vh;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    h2 {
+        font-size: 2.2rem;
+        font-weight: 600;
+        color: #474747;
+        font-family: 'Questrial', sans-serif; 
+    }
+
+    p {
+        font-size: 1.3rem;
+        font-family: 'Questrial', sans-serif; 
+
+        span {
+            font-weight: 600;
+        }
+    }
+}
+
 
 // FOOTER
 .divFooter {
