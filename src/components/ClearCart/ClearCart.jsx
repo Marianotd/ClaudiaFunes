@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+// Context
 import { cartContext } from '../../context/CartContext'
 
 export default function ClearCart() {

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
-/* Contexto */
+// Context
 import { cartContext } from '../../context/CartContext'
-/* Componentes */
+// Componentes
 import CartItem from '../CartItem/CartItem'
 
 export default function CartList() {

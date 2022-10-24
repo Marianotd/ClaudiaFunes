@@ -330,7 +330,7 @@ header, footer {
                 }
             }
     
-            .itemDetail__price {
+            .itemDetail__data {
 
                 @media all and (min-width: 768px) {
                     font-size: .9rem;
@@ -373,6 +373,11 @@ header, footer {
                         width: 2.5rem;
                     }
                 }
+            }
+
+            .cantControl {
+                font-size: .8rem;
+                color: rgb(255, 0, 0);
             }
         }
     }

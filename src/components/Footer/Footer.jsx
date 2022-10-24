@@ -1,5 +1,5 @@
 import React from 'react'
-/* Componentes */
+// Componentes
 import NavLink from '../NavLink/NavLink'
 import Logo from '../Logo/Logo'
 

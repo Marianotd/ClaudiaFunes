@@ -1,10 +1,10 @@
-/* Swiper */
 import SwiperCore , { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+// Componentes
 import Item from '../Item/Item';
 
 export default function SwiperNovs({ data }) {

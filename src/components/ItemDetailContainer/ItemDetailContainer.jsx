@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
-/* Router */
+// Router
 import { useParams } from 'react-router-dom'
-/* Componentes */
-import ItemDetail from '../ItemDetail/ItemDetail'
-/* Firestore */
+// Firebase
 import { getSingleItem } from '../../services/firestore'
+// Componentes
+import ItemDetail from '../ItemDetail/ItemDetail'
 
 export default function ItemDetailContainer() {
     const [data, setData] = useState({})

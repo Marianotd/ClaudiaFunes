@@ -1,5 +1,5 @@
 import React from 'react'
-/* Imagenes */
+// Imagenes
 import PortadaImg from './portada.jpg'
 
 export default function Portada() {

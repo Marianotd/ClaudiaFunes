@@ -1,7 +1,7 @@
-/* Bootstrap y CSS */
+// CSS y Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './scss/styles.css'
-/* Componentes */
+// Componentes
 import NavBar from './components/NavBar/NavBar'
 import Portada from './components/Portada/Portada';
 import Footer from './components/Footer/Footer';
@@ -10,10 +10,9 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import CheckOut from './components/CheckOut/CheckOut';
 import Cart from './components/Cart/Cart';
 import CheckOutOrder from './components/CheckOutOrder/CheckOutOrder';
-/* Router */
+// Router
 import { BrowserRouter , Routes, Route } from 'react-router-dom'
 import CartContextProvider from './context/CartContext';
-
 
 function App() {
   return (

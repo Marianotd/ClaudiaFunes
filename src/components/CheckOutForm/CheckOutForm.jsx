@@ -1,8 +1,9 @@
 import React, { useState, useContext } from 'react'
+// Router
 import { useNavigate } from 'react-router-dom'
-/* Firestore */
-import { createBuyOrder } from '../../services/firestore'
-/* Contexto */
+// Firebase
+import { createBuyOrder, getSingleItem, stockFit } from '../../services/firestore'
+// Context
 import { cartContext } from '../../context/CartContext'
 
 export default function CheckOutForm() {
@@ -42,6 +43,7 @@ export default function CheckOutForm() {
                 navigate(`/cart/checkout/${orderId}`)
               })
               
+            stockDiscuount()
             clearCart()
         }
       }
@@ -53,6 +55,17 @@ export default function CheckOutForm() {
         const newDataForm = {...dataForm}
         newDataForm[inputName] = value
         setDataForm(newDataForm)
+    }
+
+    function stockDiscuount(){
+      cart.forEach(itemCart => {
+        getSingleItem(itemCart.id)
+          .then((itemResponse) => {
+            itemResponse.stock -= itemCart.count
+            
+            stockFit(itemResponse)
+          })
+      })
     }
 
   return (

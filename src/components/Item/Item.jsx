@@ -1,5 +1,5 @@
 import React from 'react'
-/* Router */
+// Router
 import { Link } from 'react-router-dom'
 
 export default function Item({ id, name, img, category, slide}) {

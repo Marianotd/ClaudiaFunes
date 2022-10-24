@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
-/* Bootstrap */
+// Bootstrap
 import Collapse from 'react-bootstrap/Collapse';
-/* Iconos */
+// Iconos
 import { CgMenu } from 'react-icons/cg';
-/* Componentes */
+// Imagenes
+import NavLinkImg from '../NavLink/NavLinkImg.png';
+import NavTatuajes from '../NavLink/NavTatuajes.png';
+// Componentes
 import Logo from '../Logo/Logo';
 import NavLink from '../NavLink/NavLink';
 import CartWidget from '../CartWidget/CartWidget';
-
-/* Imagenes */
-import NavLinkImg from '../NavLink/NavLinkImg.png';
-import NavTatuajes from '../NavLink/NavTatuajes.png';
 
 export default function NavBar() {
     const [open, setOpen] = useState(false);

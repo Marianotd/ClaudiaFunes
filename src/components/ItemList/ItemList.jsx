@@ -1,5 +1,5 @@
 import React from 'react'
-/* Componentes */
+// Componentes
 import Item from '../Item/Item'
 
 export default function ItemList({data}) {

@@ -1,7 +1,7 @@
 import React from 'react'
-/* Router */
+// Router
 import { Link } from 'react-router-dom'
-/* Componentes */
+// Imagenes
 import LogoImg from './Logo.png'
 
 export default function Logo() {

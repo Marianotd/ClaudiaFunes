@@ -1,8 +1,10 @@
 import React from 'react'
+// Router
 import { Link } from 'react-router-dom'
-import CheckOutForm from '../CheckOutForm/CheckOutForm'
-/* Iconos */
+// Iconos
 import { CgArrowLeftO } from 'react-icons/cg'
+// Componentes
+import CheckOutForm from '../CheckOutForm/CheckOutForm'
 
 export default function CheckOut() {
   return (

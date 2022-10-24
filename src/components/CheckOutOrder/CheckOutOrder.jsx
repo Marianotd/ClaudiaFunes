@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
+// Router
 import { useParams } from 'react-router-dom'
+// Firebase
 import { getOrder } from '../../services/firestore'
-/* Spiner */
+// Loader
 import { FadeLoader } from "react-spinners";
 
 export default function CheckOutOrder() {

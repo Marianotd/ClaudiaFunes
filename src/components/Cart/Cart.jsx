@@ -12,6 +12,7 @@ import ButtonCart from '../ButtonCart/ButtonCart'
 export default function Cart() {
   const [state, setState] = useState()
   const navigate = useNavigate()
+  // Context
   const { cart } = useContext(cartContext)  
 
   useEffect(() => {

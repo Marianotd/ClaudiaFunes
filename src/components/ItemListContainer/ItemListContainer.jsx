@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
-/* Router */
+// Router
 import { useParams } from 'react-router-dom'
-/* Componentes */
-import ItemList from '../ItemList/ItemList'
-/* Spiner */
+// Loader
 import { FadeLoader } from "react-spinners";
 import SwiperNovs from '../SwiperNovs/SwiperNovs';
-/* Firestore */
+// FireBase
 import { getItemsByCategory } from '../../services/firestore'
+// Componentes
+import ItemList from '../ItemList/ItemList'
 
 export default function ItemListContainer() {
   const [data, setData] = useState([])

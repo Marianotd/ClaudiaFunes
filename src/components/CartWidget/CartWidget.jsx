@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react'
-/* Iconos */
+// Iconos
 import { BiShoppingBag } from 'react-icons/bi';
-/* Router */
+// Router
 import { Link } from 'react-router-dom';
 import { cartContext } from '../../context/CartContext';
 

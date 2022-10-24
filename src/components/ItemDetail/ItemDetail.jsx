@@ -1,31 +1,37 @@
 import React, { useState, useContext } from 'react'
-/* Componentes */
-import ItemCount from '../ItemCount/ItemCount'
-import ButtonAdd from '../ButtonAdd/ButtonAdd';
-/* Iconos */
+// Iconos
 import { CgArrowLeftO } from 'react-icons/cg'
-/* Router */
+// Router
 import { Link } from 'react-router-dom'
-/* Spiner */
-import { FadeLoader } from "react-spinners";
-/* Context */
-import { cartContext } from '../../context/CartContext';
+// Loader
+import { FadeLoader } from "react-spinners"
+// Context
+import { cartContext } from '../../context/CartContext'
+// Componentes
+import ItemCount from '../ItemCount/ItemCount'
+import ButtonAdd from '../ButtonAdd/ButtonAdd'
 
 export default function ItemDetail({ loading, data, initial, medidas, color, color2, tinta, tinta2 }) {
   const [cantCount, setCantCount] = useState(initial)
   const [state, setState] = useState(true)
+  const [cantControl, setCantControl] = useState({class: '', text: ''})
   const { addItem } = useContext(cartContext)
 
   function cantAdd() {
     if(cantCount < data.stock ) {
+        setCantControl({ class: '', text: ''})
         setCantCount(cantCount + 2)
+    } else if(cantCount === data.stock){
+        let maxCant = {class: 'cantControl', text: 'Límite de unidades alcanzado'} 
+        setCantControl(maxCant)
     }
   }
 
   function cantSustract() {
-      if(cantCount > 2 ) {
-          setCantCount(cantCount - 2)
-      }
+    if(cantCount > 2 ) {
+        setCantControl({ class: '', text: ''})
+        setCantCount(cantCount - 2)
+    }
   }
 
   function onAddToCart(){
@@ -54,8 +60,10 @@ export default function ItemDetail({ loading, data, initial, medidas, color, col
                 <p className='itemDetail__description'>{data.description}</p>
                 { state 
                   ? <>
-                      <p className='itemDetail__price'>Valor: <span>${data.price}</span> c/u</p>
+                      <p className='itemDetail__data'>Unidades disponibles: <span>{data.stock}</span></p>
+                      <p className='itemDetail__data'>Valor: <span>${data.price}</span> c/u</p>
                       <ItemCount cantAdd={cantAdd} cantSustract={cantSustract} onAddToCart={onAddToCart} cantCount={cantCount} />
+                      <span className={cantControl.class}>{cantControl.text}</span>
                     </>
                   : <ButtonAdd category={data.category}/>
                 }
