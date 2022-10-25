@@ -23,20 +23,20 @@ export default function Footer() {
 
             <div className="d-flex flex-column gap-2">
                 <h5 className="mb-3">Categorias</h5>
-                <NavLink name="Ilustraciones" link="/Ilustraciones" classImg="d-none" targetLink="_blank"/>
-                <NavLink name="Tarot"         link="/Tarot"         classImg="d-none" targetLink="_blank"/>
-                <NavLink name="Astrología"    link="/Astrologia"    classImg="d-none" targetLink="_blank"/>
-                <NavLink name="Cursos"        link="/Cursos"        classImg="d-none" targetLink="_blank"/>
-                <NavLink name="Tatuajes"      link="/Tatuajes"      classImg="d-none" targetLink="_blank"/>
+                <NavLink name="Ilustraciones" link="/Ilustraciones" classImg="d-none" targetLink=""/>
+                <NavLink name="Tarot"         link="/Tarot"         classImg="d-none" targetLink=""/>
+                <NavLink name="Astrología"    link="/Astrologia"    classImg="d-none" targetLink=""/>
+                <NavLink name="Cursos"        link="/Cursos"        classImg="d-none" targetLink=""/>
+                <NavLink name="Tatuajes"      link="/Tatuajes"      classImg="d-none" targetLink=""/>
             </div>
 
             <div className="d-flex flex-column gap-2">
                 <h5 className="mb-3">Mi usuario</h5>
-                <NavLink name="Mi cuenta"     link="/cuenta" classImg="d-none" targetLink=""/>
-                <NavLink name="Mis pedidos"   link="/cuenta/pedidos" classImg="d-none" targetLink=""/>
+                <NavLink name="Mi cuenta"     link="/cuenta"           classImg="d-none" targetLink=""/>
+                <NavLink name="Mis pedidos"   link="/cuenta/pedidos"   classImg="d-none" targetLink=""/>
                 <NavLink name="Mis cursos"    link="/cuenta/miscursos" classImg="d-none" targetLink=""/>
-                <NavLink name="Contacto"      link="/contacto" classImg="d-none" targetLink=""/>
-                <NavLink name="Cerrar sesión" link="/" classImg="d-none" targetLink=""/>
+                <NavLink name="Contacto"      link="/contacto"         classImg="d-none" targetLink=""/>
+                <NavLink name="Cerrar sesión" link="/"                 classImg="d-none" targetLink=""/>
             </div>
         </div>
     </footer>

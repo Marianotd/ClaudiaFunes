@@ -8,7 +8,6 @@ import { cartContext } from '../../context/CartContext'
 
 export default function CheckOutForm() {
     const navigate = useNavigate()
-    const [alertForm, setAlertForm] = useState('alertForm--none')
     const { cart, totalCount, clearCart } = useContext(cartContext)  
     const [dataForm, setDataForm] = useState({
         email: '',
@@ -25,27 +24,20 @@ export default function CheckOutForm() {
           return itemMap
         })
 
-        if(dataForm.email === '' || dataForm.name === '' || dataForm.surname === '' || dataForm.phone === ''){
-            const newAlertForm = 'alertForm'
-            setAlertForm(newAlertForm)
-        } else {
-            const orderData = {
-              buyer: dataForm,
-              items: orderCart,
-              date: new Date(),
-              total: totalCount().total
-            }
-        
-            createBuyOrder(orderData)
-              .then(orderId => {
-                const newAlertForm = 'alertForm--none'
-                setAlertForm(newAlertForm)
-                navigate(`/cart/checkout/${orderId}`)
-              })
-              
-            stockDiscuount()
-            clearCart()
+        const orderData = {
+          buyer: dataForm,
+          items: orderCart,
+          date: new Date(),
+          total: totalCount().total
         }
+    
+        createBuyOrder(orderData)
+          .then(orderId => {
+            navigate(`/cart/checkout/${orderId}`)
+          })
+          
+        stockDiscuount()
+        clearCart()
       }
 
     function inputChangeHandler(e){
@@ -84,9 +76,7 @@ export default function CheckOutForm() {
           <label htmlFor="phone">Teléfono:<span>*</span></label>
           <input value={dataForm.phone} name='phone' type="tel" onChange={inputChangeHandler} required/>
 
-          <p className={alertForm}>Hay datos sin completar, por favor rellene todos los campos</p>
-
-          <button className='itemButton itemButton--cart mb-2 py-2' type='submit' onClick={handleCheckOut}>Enviar</button>
+          <button className='itemButton itemButton--cart mb-2 py-2' type='submit'>Enviar</button>
       </form>
     </>
 

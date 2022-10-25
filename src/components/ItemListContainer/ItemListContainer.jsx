@@ -8,6 +8,7 @@ import SwiperNovs from '../SwiperNovs/SwiperNovs';
 import { getItemsByCategory } from '../../services/firestore'
 // Componentes
 import ItemList from '../ItemList/ItemList'
+import NotFound from '../NotFound/NotFound';
 
 export default function ItemListContainer() {
   const [data, setData] = useState([])
@@ -25,7 +26,7 @@ export default function ItemListContainer() {
   return (
     <section>
       <h2 className='sectionTitle mt-4 ps-4'>{title}</h2>
-      <div className="itemListContainer d-flex flex-row flex-wrap justify-content-evenly align-content-center p-4 my-3">
+      <div className="itemListContainer d-flex flex-row flex-wrap justify-content-evenly align-content-center p-4 my-3 gap-2">
         {
           title === 'Novedades'
           ? <>
@@ -36,7 +37,10 @@ export default function ItemListContainer() {
             </> 
           : <>
               <FadeLoader color={'#ccc'} loading={loading} size={150} height={35} width={7.5} radius={35} margin={25} />
-              <ItemList data={data}/>
+              {data.length === 0 && !loading
+                  ? <NotFound text={'Lo sentimos, aun no hay productos en esta sección'} />
+                  : <ItemList data={data}/>
+              } 
             </>
         }
       </div> 

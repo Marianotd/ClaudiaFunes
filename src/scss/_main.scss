@@ -283,7 +283,7 @@ header, footer {
 
 // ITEM DETAIL
 .itemDetailContainer {
-    background: rgba($color: #ffe7ce, $alpha: 0.2);
+    background: rgba($color: #ffe7ce, $alpha: 0.3);
 
     .itemDetail {
         background: rgba($color: #fff, $alpha: 0.3);
@@ -346,7 +346,7 @@ header, footer {
             }
     
             .itemCount {
-                border: 1px solid rgba($color: #ccc, $alpha: 0.3);
+                border: 1px solid rgba($color: #ffe7ce, $alpha: 0.3);
                 border-radius: 35px;
     
                 .buttonCant {
@@ -582,7 +582,7 @@ header, footer {
     height: 300px;
     width: 100%;
     margin: 2rem 0;
-    background-color: rgba($color: #000, $alpha: 0.05);
+    background-color: rgba($color: #ffe7ce, $alpha: 0.3);
     color: #bbb;
     display: flex;
     flex-direction: column;
@@ -609,7 +609,7 @@ header, footer {
 .cartTotal {
     width: 100%;
     max-width: 500px;
-    background-color: rgba($color: #000, $alpha: 0.02);
+    background-color: rgba($color: #ffe7ce, $alpha: 0.3);
 
     display: flex;
     flex-flow: row wrap;
@@ -702,7 +702,7 @@ header, footer {
 // CHECKOUT
 .checkOut {
     min-height: 50vh;
-    background-color: rgba($color: #000, $alpha: 0.03);
+    background-color: rgba($color: #ffe7ce, $alpha: 0.3);
     text-align: center;
 
     display: flex;
@@ -733,6 +733,50 @@ header, footer {
     }
 }
 
+// 404 NOT FOUND
+.notFound, .noItems {
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba($color: #ffe7ce, $alpha: 0.3);
+
+    h1 {
+        font-size: 2rem;
+        color: #474747;
+        text-align: center;
+    }
+}
+
+// CONTACTO
+.contactContainer {
+    min-height: 50vh;
+    background-color: rgba($color: #ffe7ce, $alpha: 0.3);
+    padding: 10% 2.5%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    .contactChannels {
+        background: none;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .formContact {
+        background: none;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+}
 
 // FOOTER
 .divFooter {
