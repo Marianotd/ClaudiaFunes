@@ -62,7 +62,7 @@ export default function CheckOutForm() {
 
   return (
     <>
-      <form onSubmit={handleCheckOut} className='cartForm my-4'>
+      <form onSubmit={handleCheckOut} className='form my-4'>
           <h2 className='mb-4'>Complete los siguientes datos para finalizar su compra</h2>
           <label htmlFor="email">Email:<span>*</span></label>
           <input value={dataForm.email} name='email' type="email" onChange={inputChangeHandler} required/>

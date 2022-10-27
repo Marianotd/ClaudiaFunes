@@ -221,7 +221,7 @@ header, footer {
     font-size: 2rem;
     color: #63615E;
     border: none;
-    background-color: #fff;
+    background-color: none;
 }
 
 // CONTENEDOR PRODUCTOS
@@ -640,8 +640,8 @@ header, footer {
     }
 }
 
-// FORMULARIO CARRITO
-.cartForm {
+// FORMULARIO CARRITO Y CONTACTO
+.form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -652,6 +652,13 @@ header, footer {
         color: #474747;
         font-family: 'Questrial', sans-serif;    
         font-size: 2rem;
+    }
+
+    h4 {
+        text-align: center;
+        color: #63615E;
+        font-size: .95rem;
+        margin-bottom: 2rem;
     }
 
     label {
@@ -665,7 +672,9 @@ header, footer {
         }
     }
 
-    input {
+    input, textarea {
+        resize: none;
+
         margin-bottom: 25px;
         width: 65%;
         max-width: 385px;
@@ -685,17 +694,17 @@ header, footer {
 
         }
     }
+}
 
-    .alertForm {
-        display: inline-block;
-        color: red;
-        font-size: .85rem;
-        margin-bottom: 15px;
-        text-align: center;
-    
-        &--none {
-            display: none;
-        }
+.alertForm {
+    display: inline-block;
+    color: red;
+    font-size: .85rem;
+    margin-bottom: 15px;
+    text-align: center;
+
+    &--none {
+        display: none;
     }
 }
 
@@ -748,7 +757,7 @@ header, footer {
     }
 }
 
-// CONTACTO
+// SITIO CONTACTO
 .contactContainer {
     min-height: 50vh;
     background-color: rgba($color: #ffe7ce, $alpha: 0.3);
@@ -759,22 +768,36 @@ header, footer {
     align-items: center;
     justify-content: space-evenly;
 
-    .contactChannels {
-        background: none;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
+    @media all and (min-width: 1200px) {
+        flex-direction: row;
+        justify-content: space-around;
     }
 
-    .formContact {
+    .contactChannels {
         background: none;
+        margin: 2rem 0;
 
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-evenly;
+        gap: 2rem;
+
+        @media all and (min-width: 1200px) {
+            width: 55%;
+            align-self: flex-start;
+        }
+
+        a {
+            text-decoration: none;
+            color: #474747;
+            font-size: .85rem;
+
+            span {
+                font-size: 1.2rem;
+                width: 35%;
+            }
+        }
     }
 }
 
