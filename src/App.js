@@ -27,9 +27,10 @@ function App() {
           <Route path='/:cat' element={<ItemListContainer/>}/>
           <Route path='/:cat/:id' element={<ItemDetailContainer/>}/>   
           <Route path='/Contacto' element={<Contact />} />    
+          <Route path='/Contacto/:orderid' element={<CheckOutOrder collection={'messages'} message={'confirmando tu contacto'} message2={'solicitud'} />} /> 
           <Route path='/cart' element={<Cart/>}/>
           <Route path='/cart/checkout/' element={<CheckOut />} />
-          <Route path='/cart/checkout/:orderid' element={<CheckOutOrder />} />
+          <Route path='/cart/checkout/:orderid' element={<CheckOutOrder collection={'orders'} message={'con la confirmación de tu compra'} message2={'compra'} />} />
           <Route path='*' element={<NotFound text={'404: Page not found'}/>}/>
         </Routes>
         

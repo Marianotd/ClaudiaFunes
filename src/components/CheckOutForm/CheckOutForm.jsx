@@ -17,28 +17,28 @@ export default function CheckOutForm() {
     })
 
     function handleCheckOut(e){
-        e.preventDefault()
+      e.preventDefault()
 
-        let orderCart = cart.map(item => {
-          let itemMap = {id: item.id, name: item.name, count: item.count}
-          return itemMap
-        })
+      let orderCart = cart.map(item => {
+        let itemMap = {id: item.id, name: item.name, count: item.count}
+        return itemMap
+      })
 
-        const orderData = {
-          buyer: dataForm,
-          items: orderCart,
-          date: new Date(),
-          total: totalCount().total
-        }
-    
-        createBuyOrder(orderData)
-          .then(orderId => {
-            navigate(`/cart/checkout/${orderId}`)
-          })
-          
-        stockDiscuount()
-        clearCart()
+      const orderData = {
+        buyer: dataForm,
+        items: orderCart,
+        date: new Date(),
+        total: totalCount().total
       }
+    
+      createBuyOrder(orderData)
+        .then(orderId => {
+          navigate(`/cart/checkout/${orderId}`)
+        })
+          
+      stockDiscuount()
+      clearCart()
+    }
 
     function inputChangeHandler(e){
         let inputName = e.target.name

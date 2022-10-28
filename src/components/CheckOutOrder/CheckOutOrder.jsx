@@ -6,17 +6,22 @@ import { getOrder } from '../../services/firestore'
 // Loader
 import { FadeLoader } from "react-spinners";
 
-export default function CheckOutOrder() {
+export default function CheckOutOrder({  collection, message, message2 }) {
     const { orderid } = useParams('orderid')
     const [order, setOrder] = useState()
     const [loader, setLoader] = useState(true)
 
     useEffect( () => {
-        getOrder(orderid)
+        getOrder(collection , orderid)
         .then(response => {
-            let { buyer } = response
-            setLoader(false)
-            setOrder(buyer)
+            if(collection === 'orders'){
+                let { buyer } = response
+                setLoader(false)
+                setOrder(buyer)
+            } else {
+                setLoader(false)
+                setOrder(response)
+            }
         })
     }, [orderid])
 
@@ -28,8 +33,8 @@ export default function CheckOutOrder() {
         :     
         <>
             <h2>¡Gracias por elegirnos!</h2>
-            <p><span>{order.name}</span> te hemos enviado un correo a "<span>{order.email}</span>" con la confirmación de tu compra.</p>
-            <p>El número de tu compra es: <span>{orderid}</span></p>   
+            <p><span>{order.name}</span> te hemos enviado un correo a "<span>{order.email}</span>" {message}.</p>
+            <p>El número de tu {message2} es: <span>{orderid}</span></p>   
         </>
 
         }

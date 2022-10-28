@@ -50,8 +50,8 @@ export async function createBuyOrder(orderData){
   return response.id
 }
 
-export async function getOrder(id) {
-  const docRef = doc(firestore, 'orders', id)
+export async function getOrder(collection, id) {
+  const docRef = doc(firestore, collection, id)
   const docSnapshot = await getDoc(docRef)
   return { ...docSnapshot.data(), id: docSnapshot.id}
 }
@@ -67,6 +67,12 @@ export async function stockFit(item){
     price: item.price,
     stock: item.stock
   })
+}
+
+export async function createMessage(messageData){
+  const myColection = collection(firestore, 'messages')
+  let response = await addDoc(myColection, messageData)
+  return response.id
 }
 
 export default firestore
