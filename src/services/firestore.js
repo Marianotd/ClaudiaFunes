@@ -1,5 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import { getStorage, ref, getDownloadURL } from "firebase/storage"
 import { getFirestore, collection, doc , getDoc, getDocs, query, where ,addDoc, setDoc } from 'firebase/firestore'
 
 // Your web app's Firebase configuration
@@ -15,6 +16,13 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const firestore = getFirestore(app)
+const storage = getStorage(app)
+
+export async function getUrl(archivo){ 
+  const portadaRef = ref(storage, archivo)
+  const url = await getDownloadURL(portadaRef)
+  return url
+}
 
 export async function getItems(){
     const myColection = collection(firestore, 'productos') 

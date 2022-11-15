@@ -180,40 +180,7 @@ header, footer {
 
 // PORTADA INICIO
 .portada {
-    position: relative;
-
-    .divTextoPortada {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(230, 205, 195, .6);
-
-        .textoPortada {
-            color: #222;
-            margin-top: 20%;
-            margin-left: 20%;
-
-            h3 {
-                font-size: 2.1rem;
-                font-weight: 700;
-            }
-
-            p {
-                font-size: 1.1rem;
-                font-weight: 500;
-
-                @media all and (max-width: 400px) {
-                    display: none;
-                }
-            }
-
-            @media all and (min-width: 768px) {
-                margin-top: 25%;
-            }
-        }
-    }
+    width: 100%;
 }
 
 // TITULO SECCIONES
@@ -226,6 +193,7 @@ header, footer {
 
 // CONTENEDOR PRODUCTOS
 .itemListContainer {
+
     .swiper-container {
         width: 480px;
 
@@ -688,10 +656,6 @@ header, footer {
         &:focus {
             border: 1px solid #eeae5a;
             outline: none;
-        }
-
-        @media all and (min-width: 768px){
-
         }
     }
 }

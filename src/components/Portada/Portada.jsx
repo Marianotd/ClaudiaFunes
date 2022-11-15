@@ -1,20 +1,19 @@
-import React from 'react'
-// Imagenes
-import PortadaImg from './portada.jpg'
+import React, { useState } from 'react'
+import { getUrl } from '../../services/firestore'
 
 export default function Portada() {
-    let tit = "Tarot"
-    let text = "Para alcanzar algo que nunca has tenido, tendrás que hacer algo que nunca has hecho"
+    const [videoUrl, setVideoUrl] = useState()
+    let archivo = 'portada/Portada.mp4'
+
+    getUrl(archivo)
+    .then(url => {
+        setVideoUrl(url)
+    }) 
+
   return (
     <section>
-        <div className="portada">
-            <img className="img-fluid" src={PortadaImg} alt={tit}/>
-            <div className="divTextoPortada">
-                <div className="textoPortada col-9 d-flex flex-wrap text-end">
-                    <h3 className="col-12">{tit}</h3>
-                    <p className="col-12">{text}</p>
-                </div>
-            </div>
+        <div>
+            <video src={videoUrl} className="portada" muted autoPlay loop></video>
         </div>
     </section>
   )
