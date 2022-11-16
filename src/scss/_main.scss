@@ -7,16 +7,35 @@
 
 header, footer {
     background: #ffe7ce;
+} 
+
+// HEADER
+.header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
 }
 
 // LOGO
 .logo {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
+    justify-content: center;
+    width: 45%;
+    max-width: 220px;
+    margin: auto;
     text-decoration: none;
     color: #000;
     transition: all ease .3s;
 
     &:hover {
         color: rgb(124, 124, 124);
+    }
+
+    @media all and (min-width: 768px){
+        width: 15%;
     }
 
     h3 {
@@ -45,6 +64,16 @@ header, footer {
 
 // MENU HEADER
 .menuHeader {
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    @media all and (min-width: 768px){
+        width: 10%;
+        justify-content: center;
+    }
+
     button {
         background: none;
         border: none;
@@ -109,8 +138,21 @@ header, footer {
 // NAV HEADER
 .collapse {
     background: #fad3a9;
+    width: 100%;
+
+    @media all and (min-width: 768px){
+        width: 75%;
+        flex-direction: row;
+        align-items: center;
+    }
 
     nav {
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        align-items: center;
+
         a {
         text-decoration: none;
         font-weight: 300;
@@ -181,6 +223,12 @@ header, footer {
 // PORTADA INICIO
 .portada {
     width: 100%;
+    margin: 0;
+}
+
+// SECCIÓN CAROUSEL INDEX
+.carouselContainer {
+    background: rgba($color: #ffe7ce, $alpha: 0.3);
 }
 
 // TITULO SECCIONES
@@ -193,6 +241,14 @@ header, footer {
 
 // CONTENEDOR PRODUCTOS
 .itemListContainer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-content: center;
+
+    .loaderContainer {
+        height: 70vh;
+    }
 
     .swiper-container {
         width: 480px;
@@ -245,6 +301,11 @@ header, footer {
             @media all and (min-width: 768px){
                 width: 100%;
             }
+        }
+
+        .itemImg {
+            height: 50%;
+            max-height: 450px;
         }
     }
 }
@@ -709,6 +770,7 @@ header, footer {
 // 404 NOT FOUND
 .notFound, .noItems {
     height: 50vh;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
