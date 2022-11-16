@@ -32,9 +32,6 @@ export default function Portada() {
     }) 
 
   return (
-    <picture>
-          <source srcSet={videoUrl} media="(min-width: 768px)"/>
-          <video src={`${videoUrl}--sm`} className="portada" muted autoPlay loop></video>
-    </picture>
+      <video src={videoUrl} className="portada" muted autoPlay loop></video>
   )
 }
