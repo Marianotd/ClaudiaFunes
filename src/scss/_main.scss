@@ -38,6 +38,16 @@ header, footer {
         width: 15%;
     }
 
+    &--footer {
+        width: 50%;
+        max-width: 220px;
+
+        @media all and (min-width: 768px) {
+            width: 30%;
+            max-width: 250px;
+        }
+    }
+
     h3 {
         font-size: 1.1rem;
         font-family: 'Questrial', sans-serif;
@@ -223,12 +233,15 @@ header, footer {
 // PORTADA INICIO
 .portada {
     width: 100%;
+    height: auto;
     margin: 0;
 }
 
 // SECCIÓN CAROUSEL INDEX
 .carouselContainer {
     background: rgba($color: #ffe7ce, $alpha: 0.3);
+    margin-top: -7.5px;
+    padding-top: 17.5px;
 }
 
 // TITULO SECCIONES
@@ -277,6 +290,11 @@ header, footer {
 
     // PRODUCTOS
     .item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+
         border-radius: 10px;
         width: 70%;
         max-width: 320px;
@@ -323,13 +341,41 @@ header, footer {
         .itemDetail__img {
             width: 65%;
             max-width: 300px;
+            position: relative;
 
             @media all and (min-width: 1200px) {
                 max-width: 400px;
             }
+
+            .setImg {
+                position: absolute;
+                width: 25%;
+                left: -10%;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+
+                button {
+                    border: 1px solid #aaa;
+                    background: none;
+                }
+            }
+
+            .principalImg {
+                margin-left: 17.5%;
+            }
         }
 
         .itemDetail__info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            @media all and (min-width: 768px){
+                width: 42.5%;
+            }
+
             .itemDetail__title {
                 font-family: 'Questrial', sans-serif;
                 color: #63615E;
@@ -829,20 +875,45 @@ header, footer {
 
 // FOOTER
 .divFooter {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+
+    min-height: 500px;
+
+    @media all and (min-width: 1200px){
+        justify-content: space-evenly;
+    }
+
     h5 {
         color: #474747;
         font-weight: 600;
     }
 
-    a {
-        text-decoration: none;
-        color: rgb(124, 124, 124);
-        font-weight: 500;
-        font-size: .85rem;
-        transition: all ease .4s;
+    .linkGroup {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        gap: 1.6rem;
+        max-height: 350px;
 
-        &:hover {
-            transform: scale(1.05);
+        a {
+            text-decoration: none;
+            color: rgb(124, 124, 124);
+            font-weight: 500;
+            font-size: .85rem;
+            transition: all ease .4s;
+    
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
         }
     }
 }

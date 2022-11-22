@@ -16,6 +16,8 @@ export default function ItemDetail({ loading, data, initial, medidas, color, col
   const [state, setState] = useState(true)
   const [cantControl, setCantControl] = useState({class: '', text: ''})
   const { addItem } = useContext(cartContext)
+  let isArray = Array.isArray(data.img)
+  let imgArray = isArray ? data.img : ''
 
   function cantAdd() {
     if(cantCount < data.stock ) {
@@ -35,7 +37,6 @@ export default function ItemDetail({ loading, data, initial, medidas, color, col
   }
 
   function onAddToCart(){
-    setCantCount(initial)
       if(data.stock > 0) {
           setState(false)
       }
@@ -52,10 +53,22 @@ export default function ItemDetail({ loading, data, initial, medidas, color, col
               </Link>
       
               <div className='itemDetail__img'>
-                <img src={data.img} className='img-fluid' alt={data.name}/>
+                { isArray
+                    ? <>
+                        <div className='setImg'>
+                          { imgArray.map(urlImg => {
+                            return(
+                              <button key={urlImg}><img src={urlImg} className='img-fluid' alt={data.name}/></button>
+                            )  
+                          })}
+                        </div>
+                        <img src={data.img[0]} className='principalImg img-fluid' alt={data.name}/>
+                      </>
+                    : <img src={data.img} className='img-fluid' alt={data.name}/>
+                }
               </div>
 
-              <div className='itemDetail__info col-md-5 d-flex flex-column justify-content-center align-items-center my-2'>
+              <div className='itemDetail__info my-2'>
                 <h3 className='itemDetail__title my-2'>{data.name}</h3>
                 <p className='itemDetail__description'>{data.description}</p>
                 { state 

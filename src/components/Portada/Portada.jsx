@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+// FireBase
 import { getUrl } from '../../services/firestore'
 
 export default function Portada() {

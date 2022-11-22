@@ -13,7 +13,6 @@ export default function SwiperNovs({ data }) {
   return (
     <Swiper
       navigation
-      pagination
       spaceBetween={0}
       slidesPerView={'auto'}
       breakpoints={{

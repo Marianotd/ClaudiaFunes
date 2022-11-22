@@ -42,7 +42,7 @@ export async function getSingleItem(id) {
 
 export async function getItemsByCategory(cat){
   const myColection = collection(firestore, 'productos')
-  const queryCat = (cat === undefined) ? query(myColection, where('novelty', '==', true)) : query(myColection, where('category', '==', cat))
+  const queryCat = query(myColection, where('category', '==', cat))
   const snapShotDB = await getDocs(queryCat)
 
   let dataDocs = snapShotDB.docs.map(document => {
