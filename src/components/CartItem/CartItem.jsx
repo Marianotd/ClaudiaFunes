@@ -8,7 +8,10 @@ export default function CartItem({id, name, img, price, count}) {
   return (
     <div className='cartItem my-3'>
         <button className='removeItem' onClick={() => sustractItem(id)}>X</button>
-        <img src={img} className="img-fluid h-100" alt={name}/>
+        { Array.isArray(img)
+            ? <img src={img[0]} className="img-fluid h-100" alt={name}/>
+            : <img src={img} className="img-fluid h-100" alt={name}/>
+        }
         <div className='cartItemDetail'>
             <h4>{name}</h4>
             <p><span>Cantidad:</span> {count}u</p>

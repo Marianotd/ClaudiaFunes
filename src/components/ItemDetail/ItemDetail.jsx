@@ -10,14 +10,13 @@ import { cartContext } from '../../context/CartContext'
 // Componentes
 import ItemCount from '../ItemCount/ItemCount'
 import ButtonAdd from '../ButtonAdd/ButtonAdd'
+import SwiperProd from '../SwiperProd.jsx/SwiperProd'
 
 export default function ItemDetail({ loading, data, initial, medidas, color, color2, tinta, tinta2 }) {
   const [cantCount, setCantCount] = useState(initial)
   const [state, setState] = useState(true)
   const [cantControl, setCantControl] = useState({class: '', text: ''})
   const { addItem } = useContext(cartContext)
-  let isArray = Array.isArray(data.img)
-  let imgArray = isArray ? data.img : ''
 
   function cantAdd() {
     if(cantCount < data.stock ) {
@@ -48,22 +47,13 @@ export default function ItemDetail({ loading, data, initial, medidas, color, col
       { loading
           ? <div className='m-5'><FadeLoader color={'#ccc'} size={150} height={35} width={7.5} radius={35} margin={25} /></div>
           : <>
-              <Link to={`/${data.category}`} className='buttonBack'>
+              <Link to={`/${data.category}`} className='buttonBack mb-4'>
                 <CgArrowLeftO />
               </Link>
       
               <div className='itemDetail__img'>
-                { isArray
-                    ? <>
-                        <div className='setImg'>
-                          { imgArray.map(urlImg => {
-                            return(
-                              <button key={urlImg}><img src={urlImg} className='img-fluid' alt={data.name}/></button>
-                            )  
-                          })}
-                        </div>
-                        <img src={data.img[0]} className='principalImg img-fluid' alt={data.name}/>
-                      </>
+                { Array.isArray(data.img)
+                    ? <SwiperProd data={data.img}/>
                     : <img src={data.img} className='img-fluid' alt={data.name}/>
                 }
               </div>

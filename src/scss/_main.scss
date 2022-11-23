@@ -339,30 +339,44 @@ header, footer {
         justify-content: space-evenly;
 
         .itemDetail__img {
-            width: 65%;
-            max-width: 300px;
-            position: relative;
+            width: 75%;
+            max-width: 350px;
 
             @media all and (min-width: 1200px) {
                 max-width: 400px;
             }
 
-            .setImg {
-                position: absolute;
-                width: 25%;
-                left: -10%;
+            .swiperContainer{
                 display: flex;
-                flex-direction: column;
-                gap: 5px;
+                flex-flow: row nowrap;
+                justify-content: space-around;
+                align-items: center;
+                gap: .3rem;
 
-                button {
-                    border: 1px solid #aaa;
-                    background: none;
+                #thumbsSwiper {
+                    width: 75%;
+                    height: 400px;
+
+                    @media all and (min-width: 1200px){
+                        width: 95%;
+                        height: 550px;
+                    }
+
+                    img {
+                        border: 1px solid #ddd;
+                        max-height: 90px;
+
+                        @media all and (min-width: 1200px){
+                            max-height: 125px;
+                        }
+                    }
                 }
             }
 
-            .principalImg {
-                margin-left: 17.5%;
+            .swiper-slide {
+                img {
+                    width: 100%;
+                }
             }
         }
 
