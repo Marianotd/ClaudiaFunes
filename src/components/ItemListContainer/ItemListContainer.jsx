@@ -43,7 +43,6 @@ export default function ItemListContainer() {
               : <>
                   <SwiperNovs data={data.filter(item => item.category === 'Ilustraciones' && item.novelty === true)}/>
                   <SwiperNovs data={data.filter(item => item.category === 'Tarot' && item.novelty === true)}/>
-                  <SwiperNovs data={data.filter(item => item.category === 'Astrologia' && item.novelty === true)}/>
                 </>
 
           : loading

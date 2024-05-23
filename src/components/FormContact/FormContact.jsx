@@ -32,8 +32,8 @@ export default function FormContact() {
   }
 
   return (
-    <form onSubmit={handleCheckOut} className='form form--contact'>
-        <h2 className='sectionTitle'>Formulario de contacto</h2>
+    <form onSubmit={handleCheckOut} className='form'>
+        <h2>Formulario de contacto</h2>
         <h4>Nuestros asesores están listos para atenderte con cualquier consulta sobre tu pedido o información en general de la tienda Online.</h4>
         <input value={dataForm.name} name='name' onChange={inputChangeHandler} type="text" placeholder='Nombre/s y Apellido/s *' required/>
         <input value={dataForm.email} name='email' onChange={inputChangeHandler} type="email" placeholder='Correo electrónico *' required/>

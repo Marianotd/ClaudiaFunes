@@ -3,9 +3,10 @@ import { useContext } from 'react';
 // Iconos
 import { CgMenu } from 'react-icons/cg';
 // Componentes
-import CartWidget from '../CartWidget/CartWidget';
+import CartWidget from './CartWidget/CartWidget';
+import UserWidget from './UserWidget/UserWidget';
 // Context
-import { cartContext } from '../../context/CartContext';
+import { cartContext } from '../context/CartContext';
 
 export default function NavIcons({ setOpen, open }) {
   const { cart } = useContext(cartContext)
@@ -17,6 +18,8 @@ export default function NavIcons({ setOpen, open }) {
   return (
     <div className="menuHeader order-md-2">                   
         <button className='d-md-none' type="button" onClick={handleClick}><CgMenu className='menuHamburguesa'/></button>      
+        <UserWidget/>
+        
         { (cart === undefined || cart.length === 0)
           ? <></>
           : <CartWidget/>

@@ -5,7 +5,7 @@ import ContactChannels from '../ContactChannels/ContactChannels'
 
 export default function Contact() {
   return (
-    <div className='contactContainer'>
+    <div className='formContainer'>
         <ContactChannels />
         <FormContact />
     </div>

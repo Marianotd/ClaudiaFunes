@@ -33,7 +33,7 @@ export default function CheckOutForm() {
     
       createBuyOrder(orderData)
         .then(orderId => {
-          navigate(`/cart/checkout/${orderId}`)
+          navigate(`/Cart/Checkout/${orderId}`)
         })
           
       stockDiscuount()

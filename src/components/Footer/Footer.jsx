@@ -1,14 +1,14 @@
 import React from 'react'
 // Componentes
 import NavLink from '../NavLink/NavLink'
-import Logo from '../Logo/Logo'
 
 export default function Footer() {
+    function closeSession(){
+        console.log('Has cerrado sesión')
+    }
   return (
         <footer className="divFooter p-4"> 
-            <div className='col-12'>
-                <Logo classFooter={'logo--footer'}/>
-            </div>
+
 
             <div className="linkGroup">
                 <h5 className="mb-2">Redes sociales</h5>
@@ -21,19 +21,19 @@ export default function Footer() {
 
             <div className="linkGroup">
                 <h5 className="mb-2">Categorias</h5>
-                <NavLink name="Ilustraciones" link="/Ilustraciones" classImg="d-none"/>
-                <NavLink name="Tarot"         link="/Tarot"         classImg="d-none"/>
-                <NavLink name="Astrología"    link="/Astrologia"    classImg="d-none"/>
-                <NavLink name="Cursos"        link="/Cursos"        classImg="d-none"/>
-                <NavLink name="Tatuajes"      link="/Tatuajes"      classImg="d-none"/>
+                <NavLink name="Ilustraciones" link="/Productos/Ilustraciones" classImg="d-none"/>
+                <NavLink name="Tarot"         link="/Productos/Tarot"         classImg="d-none"/>
+                <NavLink name="Astrología"    link="/Productos/Astrologia"    classImg="d-none"/>
+                <NavLink name="Cursos"        link="/Productos/Cursos"        classImg="d-none"/>
+                <NavLink name="Tatuajes"      link="/Productos/Tatuajes"      classImg="d-none"/>
             </div>
 
             <div className="linkGroup">
                 <h5 className="mb-2">Mi usuario</h5>
-                <NavLink name="Mi cuenta"     link="/cuenta"           classImg="d-none"/>
-                <NavLink name="Mis pedidos"   link="/cuenta/pedidos"   classImg="d-none"/>
-                <NavLink name="Mis cursos"    link="/cuenta/miscursos" classImg="d-none"/>
-                <NavLink name="Contacto"      link="/contacto"         classImg="d-none"/>
+                <NavLink name="Mi cuenta"     link="/Cuenta"           classImg="d-none"/>
+                <NavLink name="Mis pedidos"   link="/Cuenta/Pedidos"   classImg="d-none"/>
+                <NavLink name="Mis cursos"    link="/Cuenta/MisCursos" classImg="d-none"/>
+                <NavLink name="Contacto"      link="/Contacto"         classImg="d-none"/>
                 <NavLink name="Cerrar sesión" link="/"                 classImg="d-none"/>
             </div>
         </footer>

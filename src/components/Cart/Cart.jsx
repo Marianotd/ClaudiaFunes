@@ -24,7 +24,7 @@ export default function Cart() {
   }, [cart])
 
   function handleCheckOut(){
-    navigate(`/cart/checkout/`)
+    navigate(`/Cart/Checkout/`)
   }
 
 

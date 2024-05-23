@@ -3,7 +3,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 export default function Item({ id, name, img, category, slide}) {
-  const urlDetail = `/${category}/${id}`
+  const urlDetail = `/Productos/${category}/${id}`
   let imgArray = Array.isArray(img)
 
   return (
