@@ -26,14 +26,15 @@ export default function NavMenu() {
         <div>
             <NavMenuButton state={open} setter={setOpen} />
             <div className={`drawer ${open ? 'drawer--open' : ''}`}>
-                <CgClose onClick={() => setOpen(false)} className='closeButton' />
 
                 <nav className="drawer__nav">
+                    <CgClose onClick={() => setOpen(false)} className='closeButton' />
                     {
                         linkList.map(link => {
                             return (
                                 <Link
                                     key={link.text}
+                                    className='drawer__nav--link'
                                     to={link.url}
                                     onClick={() => setOpen(false)}
                                 >

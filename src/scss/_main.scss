@@ -1,4 +1,6 @@
 $main-color: #FFE7CE;
+$secondary-color: #ffbf7a;
+$white: #FAFAFA;
 $text1: #383838;
 $text2: #4e4e4e;
 
@@ -53,6 +55,7 @@ footer {
         }
     }
 
+    /* Menú hamburguesa */
     &__button {
         width: 30px;
         height: 20px;
@@ -100,127 +103,52 @@ footer {
     position: fixed;
     top: 0;
     right: -100%;
-    padding: 4% 2.5%;
 
     /* Oculto fuera de la vista a la derecha */
     width: 65%;
     height: 100%;
-    background-color: rgba($main-color, 0.7);
+    background-color: $main-color;
     transition: right 0.5s ease;
     z-index: 1;
 
-    .closeButton {
-        color: $text1;
-        font-size: 2rem;
-    }
-
     &--open {
         right: 0;
+        border-left: 1px solid rgba($color: $text2, $alpha: 0.1);
     }
 
     &__nav {
         @include flex(column, center, space-evenly);
+        text-align: center;
+        height: 100%;
+
+        .closeButton {
+            color: $text1;
+            font-size: 1.5rem;
+            align-self: flex-end;
+            margin-right: 10%;
+            cursor: pointer;
+            transition: all ease .5s;
+
+            &:hover {
+                transform: scale(1.15);
+            }
+        }
+
+        &--link {
+            width: 100%;
+            color: $text2;
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 1rem 0;
+            font-family: 'Questrial', sans-serif;
+
+            &:hover {
+                background-color: $secondary-color;
+                color: $white;
+            }
+        }
     }
 }
-
-.drawer__nav a {
-    color: #FFF;
-    text-decoration: none;
-    font-size: 24px;
-    margin: 15px 0;
-    font-family: 'Questrial', sans-serif;
-}
-
-.drawer__nav a:hover {
-    color: #FFDDC1;
-    /* Color de enlace al pasar el ratón */
-}
-
-// MENU HEADER
-// .menuHeader {
-//     width: 45%;
-//     display: flex;
-//     flex-flow: row nowrap;
-//     align-items: center;
-//     justify-content: space-around;
-
-//     @media all and (min-width: 768px){
-//         width: 10%;
-//         justify-content: center;
-//     }
-
-//     button {
-//         background: none;
-//         border: none;
-//         border-radius: 100px;
-//         transition: all ease .25s;
-
-//         &:hover {
-//             transform: scale(1.05);
-//         }
-
-//         &:active {
-//             box-shadow: 0 0 5px 5px #ffd6a0;
-//         }
-
-//         .menuHamburguesa {
-//             font-size: 2rem;
-//         }
-//     }  
-
-//     .navWidget{
-//         position: relative;
-//         text-align: center;
-//         text-decoration: none;
-//         width: 20%;
-//         transition: all ease .3s;
-
-//         &:hover {
-//             transform: scale(1.1);
-//         }
-
-//         @media all and (min-width: 768px){
-//             width: 50%;
-//         }
-
-//         .navIcon {
-//             font-size: 1.8rem;
-//             color: #000;
-//             cursor: pointer;
-
-
-//             @media all and (min-width: 768px) {
-//                 font-size: 1.2rem;
-//                 vertical-align: bottom;
-//             }
-
-//             @media all and (min-width: 1200px) {
-//                 font-size: 1.8rem;
-//             }
-//         }
-
-//         .cartNumber {
-//             position: absolute;
-//             top: 10%;
-//             left: 55%;
-//             background: red;
-//             width: 20px;
-//             height: 20px;
-//             border-radius: 50%;
-//             font-size: .85rem;
-//             display: flex;
-//             justify-content: center;
-//             align-items: center;
-//             color: white;
-//             padding: 2px;
-
-//             @media all and (min-width: 768px) {
-//                 top: 0;
-//                 left: 52%;
-//             }
-//         }
-//     }
-// }
 
 // PORTADA INICIO
 .portada {
