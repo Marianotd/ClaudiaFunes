@@ -5,18 +5,18 @@ import "slick-carousel/slick/slick-theme.css";
 
 const images = [
     "/assets/portada/tarot.jpg",
-    "/assets/portada/ilustracion.jpg",
-    "/assets/portada/astrologia.jpg"
+    "/assets/portada/ilustraciones.jpg",
+    "/assets/portada/astrologia.jpg",
 ];
 
 export default function Carousel() {
     const settings = {
         infinite: true,
-        speed: 500,
+        speed: 1500,
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 3000
+        autoplaySpeed: 4500,
     };
 
     return (
