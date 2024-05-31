@@ -1,6 +1,6 @@
 $main-color: #FFE7CE;
 $secondary-color: #ffbf7a;
-$white: #FAFAFA;
+$white: #ebebeb;
 $text1: #383838;
 $text2: #4e4e4e;
 
@@ -115,7 +115,6 @@ footer {
     top: 0;
     right: -100%;
 
-    /* Oculto fuera de la vista a la derecha */
     width: 65%;
     height: 100%;
     background-color: $main-color;
@@ -200,5 +199,23 @@ footer {
             font-size: 2rem;
             font-family: 'Questrial', sans-serif;
         }
+    }
+}
+
+// Sections
+.category {
+    width: 90%;
+    margin: auto;
+    background-color: $white;
+    border-radius: 30px;
+    padding: 5%;
+    overflow: hidden;
+
+    &__title {
+        font-family: 'Merriweather Sans', sans-serif;
+        text-align: center;
+
+        font-size: 2rem;
+
     }
 }

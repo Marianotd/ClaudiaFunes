@@ -3,20 +3,20 @@ import './scss/styles.css'
 // Componentes
 import Header from './components/common/Header'
 import HeroSection from './components/heroSection/HeroSection';
-// Router
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import SectionContainer from './components/sectionsContainer/SectionContainer';
+import Footer from './components/common/Footer';
 
 function App() {
   return (
-    <BrowserRouter>
+    <main>
       <Header />
 
-      <Routes>
-        <Route path='/' element={<HeroSection />} />
-      </Routes>
+      <HeroSection />
 
+      <SectionContainer />
 
-    </BrowserRouter>
+      <Footer />
+    </main>
   );
 }
 

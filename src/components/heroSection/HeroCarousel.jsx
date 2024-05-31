@@ -9,7 +9,7 @@ const images = [
     "/assets/portada/astrologia.jpg",
 ];
 
-export default function Carousel() {
+export default function HeroCarousel() {
     const settings = {
         infinite: true,
         speed: 1500,

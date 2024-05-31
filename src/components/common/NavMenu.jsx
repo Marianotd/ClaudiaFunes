@@ -3,8 +3,6 @@ import React, { useEffect, useState } from 'react'
 import NavMenuButton from './NavMenuButton';
 // React Icons
 import { CgClose } from "react-icons/cg";
-// React-router
-import { Link } from 'react-router-dom';
 
 export default function NavMenu() {
     const [open, setOpen] = useState(false);
@@ -14,12 +12,12 @@ export default function NavMenu() {
     }, [])
 
     const linkList = [
-        { url: "/Productos/Ilustraciones", text: "Ilustraciones" },
-        { url: "/Productos/Tarot", text: "Tarot" },
-        { url: "/Productos/Astrologia", text: "Astrología" },
-        { url: "/Productos/Cursos", text: "Cursos" },
-        { url: "/Productos/Tatuajes", text: "Tatuajes" },
-        { url: "/Contacto", text: "Contacto" },
+        { url: "", text: "Ilustraciones" },
+        { url: "", text: "Tarot" },
+        { url: "", text: "Astrología" },
+        { url: "", text: "Cursos" },
+        { url: "", text: "Tatuajes" },
+        { url: "", text: "Contacto" },
     ];
 
     return (
@@ -32,14 +30,14 @@ export default function NavMenu() {
                     {
                         linkList.map(link => {
                             return (
-                                <Link
+                                <a
                                     key={link.text}
                                     className='drawer__nav--link'
-                                    to={link.url}
+                                    href={link.url}
                                     onClick={() => setOpen(false)}
                                 >
                                     {link.text}
-                                </Link>
+                                </a>
                             )
                         })
                     }

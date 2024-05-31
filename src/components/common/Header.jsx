@@ -1,17 +1,16 @@
 import React from 'react';
 // Componentes
 import NavMenu from './NavMenu';
-// React-router
-import { Link } from 'react-router-dom';
+import Brand from './Brand';
 
 export default function Header() {
-    return(
-        <header className="header">
-            <Link className='header__brand' to='/'>
-                <h3>La Proporción Aurea</h3>
-            </Link>
+    const title = "La Proporción Aurea";
 
-            <NavMenu/>
+    return (
+        <header id='inicio' className="header">
+            <Brand title={title} />
+
+            <NavMenu />
         </header>
     )
 };
