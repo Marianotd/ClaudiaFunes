@@ -1,7 +1,7 @@
 import React from 'react'
 import SectionListContainer from './SectionListContainer'
 
-export default function sectionContainer() {
+export default function SectionContainer() {
     const data = [
         {
             id: "asdasd",
@@ -70,9 +70,9 @@ export default function sectionContainer() {
 
     return (
         data.map(category => (
-            <article key={category.id} className='category' id={category.id}>
-                <h4 className='category__title'>{category.cat}</h4>
-                <SectionListContainer items={category.items} />
+            <article key={category.id} className='categoryContainer' id={category.id}>
+                <h4 className='categoryContainer__title'>{category.cat}</h4>
+                <SectionListContainer items={category.items} className="sectionListContainer" />
             </article>
         ))
     )
