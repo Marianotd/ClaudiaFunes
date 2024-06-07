@@ -24,8 +24,8 @@ export async function getUrl(archivo){
   return url
 }
 
-export async function getItems(){
-    const myColection = collection(firestore, 'productos') 
+export async function getItems(param){
+    const myColection = collection(firestore, param) 
     let snapShotDB = await getDocs(myColection)
     let dataDocs = snapShotDB.docs.map(document => {
       let docFormateado = { ...document.data(), id: document.id }

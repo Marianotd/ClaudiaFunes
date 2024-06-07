@@ -3,7 +3,7 @@ import Section from './Section'
 
 export default function SectionListContainer({ items }) {
   return (
-    items.map((item, index) => (
+    items.slice(0,2).map((item, index) => (
       <Section
         key={index}
         item={item}
