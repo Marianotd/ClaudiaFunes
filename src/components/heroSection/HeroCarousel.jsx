@@ -4,9 +4,18 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const images = [
-    "/assets/portada/tarot.jpg",
-    "/assets/portada/ilustraciones.jpg",
-    "/assets/portada/astrologia.jpg",
+    {
+        small: "/assets/portada/small/tarot.jpg",
+        large: "/assets/portada/large/tarot.jpg"
+    },
+    {
+        small: "/assets/portada/small/ilustraciones.jpg",
+        large: "/assets/portada/large/ilustraciones.jpg"
+    },
+    {
+        small: "/assets/portada/small/astrologia.jpg",
+        large: "/assets/portada/large/astrologia.jpg"
+    },
 ];
 
 export default function HeroCarousel() {
@@ -23,7 +32,12 @@ export default function HeroCarousel() {
         <div className="heroSection__carousel">
             <Slider {...settings}>
                 {images.map((image, index) => (
-                    <img key={index} src={image} alt={image} />
+                    <div key={index} className='heroSection__carousel--item'>
+                        <picture>
+                            <source media="(min-width: 768px)" srcSet={image.large} />
+                            <img src={image.small} alt={`image-${index}`} />
+                        </picture>
+                    </div>
                 ))}
             </Slider>
         </div>

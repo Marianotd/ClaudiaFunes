@@ -7,7 +7,7 @@ export default function NavMenuButton({ state, setter }) {
                 type="checkbox"
                 id="activador"
                 checked={state}
-                onChange={() => setter(!state)}
+                onChange={() => setter()}
             />
             <label htmlFor="activador">
                 <span className="header__button--line"></span>

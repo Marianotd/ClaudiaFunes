@@ -11,9 +11,12 @@ function App() {
     <>
       <Header />
 
-      <HeroSection />
+      <main className='body'>
+        <HeroSection />
 
-      <SectionContainer/>
+        <SectionContainer />
+      </main>
+
 
       <Footer />
     </>

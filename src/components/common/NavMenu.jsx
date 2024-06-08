@@ -11,6 +11,16 @@ export default function NavMenu() {
         setOpen(false)
     }, [])
 
+    function handleDrawer() {
+        setOpen(!open)
+
+        if (open) {
+            document.body.style.overflow = 'unset';
+        } else {
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
     const linkList = [
         { url: "", text: "Ilustraciones" },
         { url: "", text: "Tarot" },
@@ -22,11 +32,11 @@ export default function NavMenu() {
 
     return (
         <div>
-            <NavMenuButton state={open} setter={setOpen} />
+            <NavMenuButton state={open} setter={handleDrawer} />
             <div className={`drawer ${open ? 'drawer--open' : ''}`}>
 
                 <nav className="drawer__nav">
-                    <CgClose onClick={() => setOpen(false)} className='closeButton' />
+                    <CgClose onClick={() => handleDrawer()} className='closeButton' />
                     {
                         linkList.map(link => {
                             return (
@@ -34,7 +44,7 @@ export default function NavMenu() {
                                     key={link.text}
                                     className='drawer__nav--link'
                                     href={link.url}
-                                    onClick={() => setOpen(false)}
+                                    onClick={() => handleDrawer()}
                                 >
                                     {link.text}
                                 </a>

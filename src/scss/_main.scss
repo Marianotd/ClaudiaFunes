@@ -36,8 +36,12 @@ footer {
     background-color: $main-color;
 }
 
-body {
-    background-color: $white;
+.body {
+    background-color: rgba($color: $main-color, $alpha: 0.4);
+
+    @media all and (min-width: $large) {
+        padding: 0 7.5%;
+    }
 }
 
 .header {
@@ -120,6 +124,14 @@ body {
     transition: right 0.5s ease;
     z-index: 1;
 
+    @media all and (min-width: $large) {
+        width: 45%;
+    }
+
+    @media all and (min-width: $xl) {
+        width: 25%;
+    }
+
     &--open {
         right: 0;
         border-left: 1px solid rgba($color: $text2, $alpha: 0.1);
@@ -162,24 +174,26 @@ body {
 /* Hero section */
 .heroSection {
     position: relative;
-    width: 100%;
 
     &__carousel {
         overflow: hidden;
         background-color: rgba($main-color, 0.85);
 
-        div {
+        &--item {
             @include flex(row, center, center);
             width: 100%;
             height: 600px;
+
+            @media all and (min-width: $large) {
+                height: 400px;
+            }
         }
 
         img {
-            display: block;
-            margin: auto;
-
-            @media all and (min-width: $large){
-            }
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
         }
     }
 
