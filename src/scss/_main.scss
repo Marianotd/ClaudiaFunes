@@ -5,10 +5,10 @@ $text1: #383838;
 $text2: #4e4e4e;
 $text3: #666;
 
-$mobile: 360px;
-$medium: 480px;
-$large: 768px;
-$xl: 1200px;
+$mobile: 359px;
+$medium: 479px;
+$large: 767px;
+$xl: 1199px;
 
 @mixin flex($direction, $align, $justify) {
     display: flex;
@@ -49,7 +49,7 @@ footer {
     height: 100px;
     padding: 0 5%;
 
-    &__brand {
+    .brand {
         max-width: 75%;
         text-decoration: none;
 
@@ -238,68 +238,6 @@ footer {
 
     }
 
-    .categoryItem {
-        background-color: rgba($color: $white, $alpha: .5);
-        border-radius: 16px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-        transition: all 0.3s ease;
-
-        padding: .5rem;
-        width: 325px;
-        max-width: 80%;
-        margin: 20px auto;
-
-        &:hover,
-        &:focus {
-            transform: scale(1.01);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-
-        &__title {
-            background-color: $white;
-            padding: .5rem;
-            text-align: center;
-            color: $text2;
-            font-size: 1.3rem;
-            border-end-start-radius: 18px;
-            border-end-end-radius: 18px;
-            margin-bottom: .8rem;
-        }
-
-        &__img {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: cover;
-        }
-
-        &__text {
-            padding: .5rem 1rem;
-            font-size: 0.9em;
-            color: $text3;
-            margin-bottom: .8rem;
-        }
-
-        @media all and (min-width: $large) {
-            width: 600px;
-            @include flex(row, center, center);
-
-            &__img {
-                width: 45%;
-            }
-
-            &__title {
-                background: none;
-            }
-        }
-
-        @media all and (min-width: $xl) {
-            width: 500px;
-        }
-
-    }
-
     @media all and (min-width: $xl) {
         @include flex(row, center, center);
         flex-wrap: wrap;
@@ -314,10 +252,74 @@ footer {
     }
 }
 
+.categoryItem {
+    background-color: rgba($color: $white, $alpha: .5);
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    padding: .5rem;
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+
+    &:hover,
+    &:focus {
+        transform: scale(1.01);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .image {
+        width: 100%;
+        display: block;
+        object-fit: cover;
+    }
+
+    .text {
+        padding: .5rem;
+
+        &__title {
+            text-align: center;
+            color: $text2;
+            font-size: 1.5rem;
+        }
+
+        &__description {
+            max-height: 50%;
+            font-size: 0.9em;
+            color: $text3;
+            overflow: hidden;
+        }
+    }
+
+    @media all and (min-width: $large) {
+        max-width: 480px;
+        height: 350px;
+
+        .image {
+            margin: auto;
+            width: 45%;
+        }
+
+        .text {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: .5rem 1rem;
+        }
+    }
+
+    @media all and (min-width: $xl) {
+        display: flex;
+    }
+}
+
 .buttonSection {
     cursor: pointer;
     display: block;
-    max-width: 180px;
+    width: 180px;
     margin: auto;
     margin-bottom: .8rem;
 
