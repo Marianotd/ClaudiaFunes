@@ -19,16 +19,15 @@ export default function SectionContainer() {
     return (
         <section className='categorySection'>
             {
-                data.map(category => (
-                    <article key={category.id} className='categoryContainer' id={category.id}>
-                        <h4 className='categoryContainer__title'>{category.cat}</h4>
+                data.map(cat => (
+                    <article key={cat.id} className='categoryContainer' id={cat.id}>
+                        <h4 className='categoryContainer__title'>{cat.cat}</h4>
 
-                        <SectionListContainer items={category.items} />
+                        <SectionListContainer items={cat.items} />
 
                         <div className='categoryContainer__button'>
                             <ButtonSection text={"VER TODOS"} url={"/"} />
                         </div>
-
                     </article>
                 ))
             }
