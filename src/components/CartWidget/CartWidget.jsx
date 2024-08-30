@@ -15,7 +15,7 @@ export default function CartWidget() {
 
 
   return (
-    <Link to='/cart' className='cartWidget col-6 col-md-12 text-center text-decoration-none py-3 p-md-1'>
+    <Link to='/cart' className='text-3xl cartWidget col-6 col-md-12 text-center text-decoration-none py-3 p-md-1'>
         <BiShoppingBag className='cartIcon'/>
         {cantCount > 0 ? <span className='cartNumber p-1'>{cartCount()}</span> : ""}
     </Link>

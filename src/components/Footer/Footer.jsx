@@ -1,7 +1,7 @@
 import React from 'react'
 // Componentes
-import NavLink from '../NavLink/NavLink'
-import Logo from '../Logo/Logo'
+// import NavLink from '../NavLink/NavLink'
+import Logo from '../common/Logo'
 
 export default function Footer() {
   return (
@@ -10,7 +10,7 @@ export default function Footer() {
                 <Logo classFooter={'logo--footer'}/>
             </div>
 
-            <div className="linkGroup">
+            {/* <div className="linkGroup">
                 <h5 className="mb-2">Redes sociales</h5>
                 <NavLink name="Instagram" link="https://www.instagram.com/"        classImg="d-none" targetLink="_blank"/>
                 <NavLink name="Facebook"  link="https://es-la.facebook.com/"       classImg="d-none" targetLink="_blank"/>
@@ -35,7 +35,7 @@ export default function Footer() {
                 <NavLink name="Mis cursos"    link="/cuenta/miscursos" classImg="d-none"/>
                 <NavLink name="Contacto"      link="/contacto"         classImg="d-none"/>
                 <NavLink name="Cerrar sesión" link="/"                 classImg="d-none"/>
-            </div>
+            </div> */}
         </footer>
   )
 }
