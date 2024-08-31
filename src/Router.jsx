@@ -5,8 +5,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CartContextProvider from './context/CartContext';
 // Componentes
 import AppLayout from "./layout/AppLayout";
-import Portada from './components/Portada/Portada';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import Home from "./views/Home";
+
+import ItemListContainer from './components/list/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import CheckOut from './components/CheckOut/CheckOut';
 import Cart from './components/Cart/Cart';
@@ -24,7 +25,7 @@ export default function Router() {
             <BrowserRouter>
                 <Routes>
                     <Route element={<AppLayout />}>
-                        <Route path='/' element={<> <Portada /> <ItemListContainer /> </>} />
+                        <Route path='/' element={<Home />} />
                         <Route path='/:cat' element={<ItemListContainer />} />
                         <Route path='/:cat/:id' element={<ItemDetailContainer />} />
                         <Route path='/Contacto' element={<Contact />} />

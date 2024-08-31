@@ -9,15 +9,21 @@ export default function CartWidget() {
   const [cantCount, setCantCount] = useState(0)
   const { cartCount } = useContext(cartContext)
 
-  useEffect( () => {
+  useEffect(() => {
     setCantCount(cartCount())
   }, [cartCount])
 
 
   return (
-    <Link to='/cart' className='text-3xl cartWidget col-6 col-md-12 text-center text-decoration-none py-3 p-md-1'>
-        <BiShoppingBag className='cartIcon'/>
-        {cantCount > 0 ? <span className='cartNumber p-1'>{cartCount()}</span> : ""}
+    <Link to='/cart' className='relative text-3xl'>
+      <BiShoppingBag />
+      {
+        cantCount > 0
+          ? <span className='absolute -top-2 left-[50%] text-base bg-red-600 rounded-full w-6 h-6 text-white text-center'>
+            {cantCount}
+          </span>
+          : ""
+      }
     </Link>
   )
 }
