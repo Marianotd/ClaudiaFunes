@@ -41,11 +41,11 @@ export default function CatTitle() {
 
     return (
         title === 'Novedades' ? (
-            <h2 className='text-3xl font-bold tracking-wide lg:text-4xl text-center'>{title}</h2>
+            <h2 className='titleSection'>{title}</h2>
 
         ) : (
             <div className='py-4 px-2 text-center flex flex-col items-center gap-y-6'>
-                <h2 className='text-3xl font-bold tracking-wide lg:text-4xl text-center'>{title}</h2>
+                <h2 className='titleSection'>{title}</h2>
 
                 <p className='font-medium text-lg w-5/6' >
                     {description}

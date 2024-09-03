@@ -14,17 +14,17 @@ export default function AppLayout() {
     return (
         <div
             ref={topRef}
-            className='relative min-vh-100 w-full text-textMain'
+            className='relative min-vh-100 w-full text-textMain font-customFont'
         >
             <div className='bg-main'>
                 <NavBar />
             </div>
 
-            <div className='container flex flex-col min-h-screen max-w-[1220px] mx-auto gap-y-4'>
+            <div className='container flex flex-col min-h-screen max-w-[1220px] mx-auto gap-y-4 mb-4'>
                 <Outlet />
             </div>
 
-            <div className='bg-main mt-4'>
+            <div className='bg-main'>
                 <Footer />
             </div>
 

@@ -23,6 +23,9 @@ module.exports = {
         questions: '0px 0px 12px 2px #00000026',
         history: '0px 0px 16px 1px #00000026',
       },
+      fontFamily: {
+        customFont: ["Work Sans", "sans-serif"],
+      }
     },
   },
   plugins: [],

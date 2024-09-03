@@ -5,8 +5,8 @@ import { GrMail } from 'react-icons/gr';
 
 export default function ContactChannels() {
   return (
-    <div className='flex flex-col gap-4 border border-textMain rounded-xl p-4 bg-textMain/5'>
-      <h2 className='text-center text-2xl font-bold'>Medios de contacto</h2>
+    <div className='flex flex-col gap-4 border border-textMain rounded-xl p-4 bg-textMain/5 mx-auto lg:w-1/2 lg:items-center'>
+      <h2 className='text-center text-2xl font-bold'>Canales de contacto</h2>
 
       <a
         className='flex items-center gap-2 hover:text-secondary ease-out duration-300'

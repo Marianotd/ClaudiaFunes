@@ -6,14 +6,14 @@ import CartContextProvider from './context/CartContext';
 // Componentes
 import AppLayout from "./layout/AppLayout";
 import Home from "./views/Home";
-import CategoryContainer from "./views/sections/CategoryContainer";
+import CategoryContainer from "./views/CategoryContainer";
+import ItemDetailContainer from "./views/ItemDetailContainer";
+import Contact from './views/Contact';
+import CheckOutOrder from './components/contact/CheckOutOrder';
+import Cart from './components/cart/Cart';
 
-import ItemDetailContainer from './components/categories/ItemDetailContainer';
 import CheckOut from './components/toCheck/CheckOut';
-import Cart from './components/toCheck/Cart';
-import CheckOutOrder from './components/toCheck/CheckOutOrder';
 import NotFound from './components/toCheck/NotFound';
-import Contact from './components/contact/Contact';
 
 export default function Router() {
     useEffect(() => {

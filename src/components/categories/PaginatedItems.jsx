@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import ItemList from '../../components/toCheck/ItemList';
 import ReactPaginate from 'react-paginate'
 import { GrPrevious } from "react-icons/gr";
 import { GrNext } from "react-icons/gr";
+import ItemList from '../list/ItemList';
 
 export default function PaginatedItems({ itemsPerPage, items }) {
     const [itemOffset, setItemOffset] = useState(0);

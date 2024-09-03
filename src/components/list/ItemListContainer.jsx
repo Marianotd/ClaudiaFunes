@@ -4,7 +4,7 @@ import { PuffLoader } from 'react-spinners';
 import { getItems, getItemsByCategory } from '../../services/firestore'
 import { MdError } from "react-icons/md";
 import SwiperList from './SwiperList';
-import PaginatedItems from '../../views/sections/PaginatedItems';
+import PaginatedItems from '../categories/PaginatedItems';
 
 export default function ItemListContainer() {
   const [items, setItems] = useState(null)

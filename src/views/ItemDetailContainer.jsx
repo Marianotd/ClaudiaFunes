@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { getSingleItem } from '../../services/firestore'
+import { getSingleItem } from '../services/firestore';
 import { MdError } from "react-icons/md";
-import ItemDetail from './ItemDetail'
 import { PuffLoader } from 'react-spinners';
+import ItemDetail from  '../components/categories/ItemDetail'
 
 export default function ItemDetailContainer() {
   const [item, setItem] = useState({})

@@ -1,5 +1,4 @@
 import React from 'react'
-// Componentes
 import Item from '../home/Item'
 
 export default function ItemList({data}) {
