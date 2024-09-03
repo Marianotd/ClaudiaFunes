@@ -13,7 +13,7 @@ import CheckOut from './components/toCheck/CheckOut';
 import Cart from './components/toCheck/Cart';
 import CheckOutOrder from './components/toCheck/CheckOutOrder';
 import NotFound from './components/toCheck/NotFound';
-import Contact from './components/toCheck/Contact';
+import Contact from './components/contact/Contact';
 
 export default function Router() {
     useEffect(() => {

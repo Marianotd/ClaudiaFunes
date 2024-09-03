@@ -1,28 +1,22 @@
 import React, { useState, useContext } from 'react'
 import { cartContext } from '../../context/CartContext'
-import ItemCount from '../toCheck/ItemCount'
-import ButtonAdd from '../toCheck/ButtonAdd'
+import ItemCount from './ItemCount'
+import ButtonAdd from './ButtonAdd'
 import BackButton from '../common/BackButton';
 
 export default function ItemDetail({ data }) {
   const [cantCount, setCantCount] = useState(0)
   const [state, setState] = useState(true)
-  const [cantControl, setCantControl] = useState({ class: '', text: '' })
+  const [isInLimitCant, setIsInLimitCant] = useState(false)
   const { addItem } = useContext(cartContext)
 
   function cantAdd() {
-    if (cantCount < data.stock) {
-      setCantControl({ class: '', text: '' })
-      setCantCount(cantCount + 2)
-    } else if (cantCount === data.stock) {
-      let maxCant = { class: 'cantControl', text: 'Límite de unidades alcanzado' }
-      setCantControl(maxCant)
-    }
+    cantCount < data.stock ? setCantCount(cantCount + 2) : setIsInLimitCant(true)
   }
 
   function cantSustract() {
     if (cantCount > 2) {
-      setCantControl({ class: '', text: '' })
+      setIsInLimitCant(false)
       setCantCount(cantCount - 2)
     }
   }
@@ -38,29 +32,29 @@ export default function ItemDetail({ data }) {
     <div className='flex flex-col gap-6 items-center'>
       <BackButton />
 
-      <div className='flex flex-col gap-8 text-center'>
-        <h5 className='max-w-full truncate text-2xl py-2 px-4 font-bold border shadow-cardContainer border-secondary rounded-xl bg-textMain text-secondary'>- {data.name} -</h5>
+      <div className='flex flex-col lg:grid grid-cols-2 gap-8 lg:gap-x-10 text-center'>
+        <h5 className='col-start-2 max-w-full lg:h-fit truncate text-2xl py-2 px-4 font-bold border shadow-cardContainer border-secondary rounded-xl bg-textMain text-secondary'>- {data.name} -</h5>
 
-        <div className='border border-textMain p-2 rounded-xl shadow-cardContainer bg-main'>
+        <div className='row-span-4 row-start-1 col-start-1 border border-textMain p-2 rounded-xl shadow-cardContainer bg-main md:max-w-[50%] lg:max-w-max lg:h-fit mx-auto'>
           <img src={data.img} className='object-cover mx-auto rounded-xl shadow-cardContainer' alt={data.name} />
         </div>
 
-        <p className='border border-textMain rounded-xl p-4 text-xl font-semibold shadow-cardContainer'>
+        <p className='col-start-2 border border-textMain rounded-xl p-4 text-xl font-semibold shadow-cardContainer'>
           {data.description}
         </p>
 
-        <div className='flex flex-col gap-2'>
+        <div className='col-start-2 flex flex-col gap-4'>
           {
             state ? (
               <>
-                <p className='font-semibold'>
+                <p>
                   Unidades disponibles:
-                  <span className='ms-2'>{data.stock}</span>
+                  <span className='ms-2 font-semibold'>{data.stock}</span>
                 </p>
 
-                <p className='text-sm font-semibold'>
+                <p>
                   Valor:
-                  <span>${data.price}</span>
+                  <span className='ms-2 font-semibold me-2'>${data.price}</span>
                   c/u
                 </p>
 
@@ -71,15 +65,15 @@ export default function ItemDetail({ data }) {
                   cantCount={cantCount}
                 />
 
-                <span className={cantControl.class}>{cantControl.text}</span>
+                <span className={`text-red-600 font-medium ${isInLimitCant ? 'block' : 'hidden'}`}>Ha alcanzado el límite de unidades disponibles</span>
               </>
             ) : (
-              <ButtonAdd category={data.category} />
+              <ButtonAdd />
             )
           }
         </div>
 
-        <div className='description mt-4 col-12'>
+        <div className='col-start-2 text-sm font-medium'>
           <h5 className='mb-3'>Disponible en acabado mate o brillante</h5>
           <p>Medidas: <span>297 x 420 mm</span></p>
           <p>Color papel: <span>Blanco o Negro</span></p>

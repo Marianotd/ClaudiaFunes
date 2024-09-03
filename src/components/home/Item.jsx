@@ -19,7 +19,7 @@ export default function Item({ id, name, img, category }) {
 
         <Link
           to={urlDetail}
-          className='px-4 py-2 text-xl font-bold tracking-wide border border-textMain bg-secondary hover:bg-textMain hover:text-secondary rounded-xl shadow-cardButton ease-out duration-300'
+          className='myButton'
         >
           Ver detalles
         </Link>
