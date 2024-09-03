@@ -6,14 +6,14 @@ import CartContextProvider from './context/CartContext';
 // Componentes
 import AppLayout from "./layout/AppLayout";
 import Home from "./views/Home";
+import CategoryContainer from "./views/sections/CategoryContainer";
 
-import ItemListContainer from './components/list/ItemListContainer';
-import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import CheckOut from './components/CheckOut/CheckOut';
-import Cart from './components/Cart/Cart';
-import CheckOutOrder from './components/CheckOutOrder/CheckOutOrder';
-import NotFound from './components/NotFound/NotFound';
-import Contact from './components/Contact/Contact';
+import ItemDetailContainer from './components/categories/ItemDetailContainer';
+import CheckOut from './components/toCheck/CheckOut';
+import Cart from './components/toCheck/Cart';
+import CheckOutOrder from './components/toCheck/CheckOutOrder';
+import NotFound from './components/toCheck/NotFound';
+import Contact from './components/toCheck/Contact';
 
 export default function Router() {
     useEffect(() => {
@@ -26,7 +26,7 @@ export default function Router() {
                 <Routes>
                     <Route element={<AppLayout />}>
                         <Route path='/' element={<Home />} />
-                        <Route path='/:cat' element={<ItemListContainer />} />
+                        <Route path='/:cat' element={<CategoryContainer />} />
                         <Route path='/:cat/:id' element={<ItemDetailContainer />} />
                         <Route path='/Contacto' element={<Contact />} />
                         <Route path='/Contacto/:orderid' element={<CheckOutOrder collection={'messages'} message={'confirmando tu contacto'} message2={'solicitud'} />} />

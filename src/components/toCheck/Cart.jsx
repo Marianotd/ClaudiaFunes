@@ -4,10 +4,10 @@ import { Link, useNavigate } from 'react-router-dom'
 /* Contexto */
 import { cartContext } from '../../context/CartContext'
 /* Componentes */
-import CartList from '../CartList/CartList'
-import CartTotal from '../CartTotal/CartTotal'
-import ClearCart from '../ClearCart/ClearCart'
-import ButtonCart from '../ButtonCart/ButtonCart'
+import CartList from './CartList'
+import CartTotal from './CartTotal'
+import ClearCart from './ClearCart'
+import ButtonCart from './ButtonCart'
 
 export default function Cart() {
   const [state, setState] = useState()

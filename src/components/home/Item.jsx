@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 
 export default function Item({ id, name, img, category }) {
   const urlDetail = `/${category}/${id}`
-  let imgArray = Array.isArray(img)
 
   return (
     <div className='h-[675px] md:h-[625px] bg-secondary rounded-xl shadow-cardContainer p-2'>
@@ -12,7 +11,7 @@ export default function Item({ id, name, img, category }) {
 
         <div className='w-full max-h-[75%]'>
           <img
-            src={imgArray ? img[0] : img}
+            src={img}
             className="object-cover h-full mx-auto rounded-xl hover:scale-105 shadow-cardContainer ease-out duration-500"
             alt={name}
           />

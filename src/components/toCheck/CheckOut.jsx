@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 // Iconos
 import { CgArrowLeftO } from 'react-icons/cg'
 // Componentes
-import CheckOutForm from '../CheckOutForm/CheckOutForm'
+import CheckOutForm from './CheckOutForm'
 
 export default function CheckOut() {
   return (

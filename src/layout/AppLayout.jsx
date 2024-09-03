@@ -20,7 +20,7 @@ export default function AppLayout() {
                 <NavBar />
             </div>
 
-            <div className='container flex flex-col max-w-[1220px] mx-auto gap-y-4'>
+            <div className='container flex flex-col min-h-screen max-w-[1220px] mx-auto gap-y-4'>
                 <Outlet />
             </div>
 

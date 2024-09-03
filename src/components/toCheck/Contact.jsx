@@ -1,7 +1,7 @@
 import React from 'react'
 // Componentes
-import FormContact from '../FormContact/FormContact'
-import ContactChannels from '../ContactChannels/ContactChannels'
+import FormContact from './FormContact'
+import ContactChannels from './ContactChannels'
 
 export default function Contact() {
   return (
