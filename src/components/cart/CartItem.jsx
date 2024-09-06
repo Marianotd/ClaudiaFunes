@@ -5,6 +5,14 @@ import { FaTrash } from "react-icons/fa";
 export default function CartItem({ id, name, img, price, count }) {
   const { sustractItem } = useContext(cartContext)
 
+  const handleSustract = () => {
+    if (sustractItem) {
+      sustractItem(id)
+    } else {
+      console.error('sustractItem no está disponible en el contexto.')
+    }
+  }
+
   return (
     <div className='w-full border border-textMain flex flex-col rounded-xl p-4 shadow-cardContainer'>
       <div className='flex justify-between gap-4'>
@@ -15,7 +23,8 @@ export default function CartItem({ id, name, img, price, count }) {
         <div className='flex flex-col gap-4 w-[50%]'>
           <button
             className='text-2xl self-end hover:text-secondary ease-out duration-300'
-            onClick={() => sustractItem(id)}
+            onClick={handleSustract}
+            aria-label={`Eliminar ${name} del carrito`}
           >
             <FaTrash />
           </button>

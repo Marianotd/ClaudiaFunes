@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { cartContext } from '../../context/CartContext'
 import CartList from '../list/CartList'
 import CartTotal from './CartTotal'
 import ClearCart from './ClearCart'
-import ButtonCart from './ButtonCart'
+import CheckOutButton from './CheckOutButton'
 
 export default function Cart() {
   const navigate = useNavigate()
@@ -25,6 +25,7 @@ export default function Cart() {
               <Link
                 className='myButton'
                 to='/'
+                aria-label="Volver al inicio"
               >
                 Ir al inicio
               </Link>
@@ -40,7 +41,7 @@ export default function Cart() {
               <div className='flex flex-col items-center gap-6'>
                 <CartTotal />
 
-                <ButtonCart handleCheckOut={handleCheckOut} />
+                <CheckOutButton handleCheckOut={handleCheckOut} />
               </div>
             </>
           )
