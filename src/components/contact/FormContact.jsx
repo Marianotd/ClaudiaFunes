@@ -57,7 +57,12 @@ export default function FormContact() {
         Nuestros asesores están listos para atenderte con cualquier consulta sobre tu pedido o información en general de la tienda Online.
       </h3>
 
-      <InputList data={inputList} register={register} watch={watch} errors={errors} />
+      <InputList
+        data={inputList}
+        register={register}
+        watch={watch}
+        errors={errors}
+      />
 
       <div className='flex flex-col gap-1'>
         <label htmlFor="message">Dejanos tu comentario:</label>

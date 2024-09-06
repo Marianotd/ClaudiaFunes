@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getStorage, ref, getDownloadURL } from "firebase/storage"
-import { getFirestore, collection, doc , getDoc, getDocs, query, where ,addDoc, setDoc } from 'firebase/firestore'
+import { getFirestore, collection, doc, getDoc, getDocs, query, where, addDoc, setDoc } from 'firebase/firestore'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -18,29 +18,34 @@ const app = initializeApp(firebaseConfig);
 const firestore = getFirestore(app)
 const storage = getStorage(app)
 
-export async function getUrl(archivo){ 
+export async function getUrl(archivo) {
   const portadaRef = ref(storage, archivo)
   const url = await getDownloadURL(portadaRef)
   return url
 }
 
-export async function getItems(){
-    const myColection = collection(firestore, 'productos') 
-    let snapShotDB = await getDocs(myColection)
-    let dataDocs = snapShotDB.docs.map(document => {
-      let docFormateado = { ...document.data(), id: document.id }
-      return docFormateado
-    })
-    return dataDocs
+export async function getItems() {
+  const myColection = collection(firestore, 'productos')
+  let snapShotDB = await getDocs(myColection)
+  let dataDocs = snapShotDB.docs.map(document => {
+    let docFormateado = { ...document.data(), id: document.id }
+    return docFormateado
+  })
+  return dataDocs
 }
 
 export async function getSingleItem(id) {
-  const docRef = doc(firestore, 'productos', id)
-  const docSnapshot = await getDoc(docRef)
-  return { ...docSnapshot.data(), id: docSnapshot.id}
+  const docRef = doc(firestore, 'productos', id);
+  const docSnapshot = await getDoc(docRef);
+
+  if (docSnapshot.exists()) {
+    return { ...docSnapshot.data(), id: docSnapshot.id };
+  } else {
+    return null;
+  }
 }
 
-export async function getItemsByCategory(cat){
+export async function getItemsByCategory(cat) {
   const myColection = collection(firestore, 'productos')
   const queryCat = query(myColection, where('category', '==', cat))
   const snapShotDB = await getDocs(queryCat)
@@ -52,7 +57,7 @@ export async function getItemsByCategory(cat){
   return dataDocs
 }
 
-export async function createBuyOrder(orderData){
+export async function createBuyOrder(orderData) {
   const myColection = collection(firestore, 'orders')
   let response = await addDoc(myColection, orderData)
   return response.id
@@ -61,11 +66,11 @@ export async function createBuyOrder(orderData){
 export async function getOrder(collection, id) {
   const docRef = doc(firestore, collection, id)
   const docSnapshot = await getDoc(docRef)
-  return { ...docSnapshot.data(), id: docSnapshot.id}
+  return { ...docSnapshot.data(), id: docSnapshot.id }
 }
 
-export async function stockFit(item){
-  await setDoc(doc(firestore, "productos", item.id), { 
+export async function stockFit(item) {
+  await setDoc(doc(firestore, "productos", item.id), {
     category: item.category,
     category2: item.category2,
     description: item.description,
@@ -77,7 +82,7 @@ export async function stockFit(item){
   })
 }
 
-export async function createMessage(messageData){
+export async function createMessage(messageData) {
   const myColection = collection(firestore, 'messages')
   let response = await addDoc(myColection, messageData)
   return response.id

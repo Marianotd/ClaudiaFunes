@@ -6,12 +6,12 @@ export default function MyInput({ name, register, watch, error }) {
     const labelSelector = placeholderSelector[0].toUpperCase() + placeholderSelector.substring(1)
 
     const validationRules = {
-        name: { required: 'El nombre es obligatorio' },
-        email: {
+        user_name: { required: 'El nombre es obligatorio' },
+        user_email: {
             required: 'El correo electrónico es obligatorio',
             pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: 'Correo electrónico inválido' }
         },
-        phone: {
+        user_phone: {
             required: 'El teléfono es obligatorio',
             pattern: { value: /^[0-9]+$/, message: 'El teléfono solo debe contener números' }
         }

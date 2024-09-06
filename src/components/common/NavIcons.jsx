@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import { AiOutlineMenu } from "react-icons/ai";
 import { IoMdClose } from "react-icons/io";
 // Componentes
-import CartWidget from '../toCheck/CartWidget';
+import CartWidget from './CartWidget';
 // Context
 import { cartContext } from '../../context/CartContext';
 

@@ -7,7 +7,7 @@ export default function ClearCart() {
 
   return (
     <button
-      className='lg:col-start-3 w-fit flex gap-2 items-center self-end justify-self-end text-lg border border-textMain hover:border-main hover:bg-textMain hover:text-white font-medium rounded-xl px-4 py-2 ease-out duration-300'
+      className='lg:col-start-2 w-fit flex gap-2 items-center self-end justify-self-end text-lg border border-textMain hover:border-main hover:bg-textMain hover:text-white font-medium rounded-xl px-4 py-2 ease-out duration-300'
       onClick={() => clearCart()}
     >
       <IoMdClose /> Limpiar carrito

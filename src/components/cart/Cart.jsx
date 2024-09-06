@@ -17,7 +17,7 @@ export default function Cart() {
   return (
     <div className='flex flex-col gap-6 p-4'>
       <h2 className='titleSection'>Resumen de compra</h2>
-      <div className='min-h-screen md:w-2/3 lg:w-full mx-auto flex flex-col lg:grid grid-cols-3 grid-rows-[max-content_1fr]  items-center gap-6'>
+      <div className='min-h-screen md:w-2/3 lg:w-full mx-auto flex flex-col lg:grid grid-cols-2 grid-rows-[max-content_1fr]  items-center gap-6'>
         {
           cart.length === 0 ? (
             <div className='text-2xl flex flex-col gap-6 items-center font-medium self-center m-auto text-center'>
@@ -33,7 +33,7 @@ export default function Cart() {
             <>
               <ClearCart />
 
-              <div className='flex flex-col col-span-2 gap-6'>
+              <div className='flex flex-col gap-6'>
                 <CartList cartItems={cart} />
               </div>
 
