@@ -17,14 +17,12 @@ export default function CheckOutForm() {
 
   const sendEmail = async () => {
     try {
-      await emailjs.sendForm('service_dt7fknl', 'template_vmcw5ck', formRef.current, {
-        publicKey: 'JVyKj_-FNFaFiqOWF',
-      })
-      await emailjs.sendForm('service_dt7fknl', 'template_mivsy1h', formRef.current, {
-        publicKey: 'JVyKj_-FNFaFiqOWF',
-      })
+      const serviceID = 'service_dt7fknl'
+      const publicKey = 'JVyKj_-FNFaFiqOWF'
+      await emailjs.sendForm(serviceID, 'template_vmcw5ck', formRef.current, publicKey)
+      await emailjs.sendForm(serviceID, 'template_mivsy1h', formRef.current, publicKey)
     } catch (error) {
-      console.log(error)
+      console.log("Error al enviar correo: " + error)
     }
   }
 
@@ -47,8 +45,14 @@ export default function CheckOutForm() {
     }
 
     try {
+      const isStockAvailable = await verifyStock(cart)
+      if (!isStockAvailable) {
+        console.error("No hay stock suficiente en alguno de los productos.")
+        return
+      }
+
       let orderId = await createBuyOrder(orderData)
-      // await sendEmail()
+      await sendEmail()
       stockDiscuount()
       clearCart()
       navigate(`/cart/checkout/${orderId}`)
@@ -57,16 +61,26 @@ export default function CheckOutForm() {
     }
   }
 
+  const verifyStock = async (cartItems) => {
+    for (let itemCart of cartItems) {
+      const itemResponse = await getSingleItem(itemCart.id)
+      if (itemResponse.stock < itemCart.count) {
+        return false
+      }
+    }
+    return true
+  }
 
-  function stockDiscuount() {
-    cart.forEach(itemCart => {
-      getSingleItem(itemCart.id)
-        .then((itemResponse) => {
-          itemResponse.stock -= itemCart.count
-
-          stockFit(itemResponse)
-        })
-    })
+  const stockDiscuount = async () => {
+    try {
+      for (const itemCart of cart) {
+        const itemResponse = await getSingleItem(itemCart.id);
+        itemResponse.stock -= itemCart.count;
+        await stockFit(itemResponse);
+      }
+    } catch (error) {
+      console.error("Error al actualizar el stock:", error);
+    }
   }
 
   return (
