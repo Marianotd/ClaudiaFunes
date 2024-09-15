@@ -6,36 +6,36 @@ import BackButton from '../common/BackButton';
 
 export default function ItemDetail({ data }) {
   const [cantCount, setCantCount] = useState(0);
-  const [state, setState] = useState(true);
-  const [isInLimitCant, setIsInLimitCant] = useState(false);
+  const [isInCart, setIsInCart] = useState(false);
+  const [hasReachedLimit, setHasReachedLimit] = useState(false);
   const { addItem } = useContext(cartContext);
 
   useEffect(() => {
-    if (isInLimitCant) {
-      const timeout = setTimeout(() => setIsInLimitCant(false), 3000);
+    if (hasReachedLimit) {
+      const timeout = setTimeout(() => setHasReachedLimit(false), 3000);
       return () => clearTimeout(timeout);
     }
-  }, [isInLimitCant]);
+  }, [hasReachedLimit]);
 
   function cantAdd() {
     if (cantCount < data.stock) {
-      setCantCount(cantCount + 2);
+      setCantCount(cantCount + 1);
     } else {
-      setIsInLimitCant(true);
+      setHasReachedLimit(true);
     }
   }
 
-  function cantSustract() {
+  function cantSubtract() {
     if (cantCount > 2) {
-      setCantCount(cantCount - 2);
-      setIsInLimitCant(false);
+      setCantCount(cantCount - 1);
+      setHasReachedLimit(false);
     }
   }
 
   function onAddToCart() {
     if (data.stock > 0 && cantCount > 0) {
       addItem(data, cantCount);
-      setState(false);
+      setIsInCart(false);
     }
   }
 
@@ -57,36 +57,34 @@ export default function ItemDetail({ data }) {
         </p>
 
         <div className='col-start-2 flex flex-col justify-around gap-4'>
-          {state ? (
+          {isInCart ? (
+            <ButtonAdd />
+          ) : (
             <>
               <p>
                 Valor:
-                <span className='ms-2 font-semibold me-2'>${data.price}</span>
-                c/u
+                <span className='ms-2 font-semibold me-2'>${data.price}</span> c/u
               </p>
 
-              {data.stock < 2 ? (
+              {data.stock === 0 ? (
                 <p className='text-red-600 font-medium'>
                   No hay unidades disponibles en este momento
                 </p>
               ) : (
                 <ItemCount
                   cantAdd={cantAdd}
-                  cantSustract={cantSustract}
+                  cantSustract={cantSubtract}
                   onAddToCart={onAddToCart}
                   cantCount={cantCount}
                 />
               )}
 
               <span
-                className={`text-red-600 font-medium transition-transform duration-300 ${isInLimitCant ? 'animate-bounce' : ''
-                  }`}
+                className={`text-red-600 font-medium transition-transform duration-300 ${hasReachedLimit ? 'animate-bounce' : ''}`}
               >
-                {isInLimitCant ? 'Ha alcanzado el límite de unidades disponibles' : ''}
+                {hasReachedLimit ? 'Ha alcanzado el límite de unidades disponibles' : ''}
               </span>
             </>
-          ) : (
-            <ButtonAdd />
           )}
         </div>
 

@@ -66,7 +66,12 @@ export async function createBuyOrder(orderData) {
 export async function getOrder(collection, id) {
   const docRef = doc(firestore, collection, id)
   const docSnapshot = await getDoc(docRef)
-  return { ...docSnapshot.data(), id: docSnapshot.id }
+
+  if (docSnapshot.exists()) {
+    return { ...docSnapshot.data(), id: docSnapshot.id };
+  } else {
+    return null;
+  }
 }
 
 export async function stockFit(item) {

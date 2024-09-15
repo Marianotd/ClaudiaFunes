@@ -15,27 +15,27 @@ export default function FormContact() {
 
   const inputList = ['user_name', 'user_email', 'user_phone']
 
-  const sendEmail = async () => {
+  const sendEmails = async () => {
+    const templates = ['template_vmcw5ck', 'template_mivsy1h'];
     try {
-      await emailjs.sendForm('service_dt7fknl', 'template_vmcw5ck', formRef.current, {
-        publicKey: 'JVyKj_-FNFaFiqOWF',
-      })
-      await emailjs.sendForm('service_dt7fknl', 'template_mivsy1h', formRef.current, {
-        publicKey: 'JVyKj_-FNFaFiqOWF',
-      })
+      for (const template of templates) {
+        await emailjs.sendForm('service_dt7fknl', template, formRef.current, {
+          publicKey: 'JVyKj_-FNFaFiqOWF',
+        });
+      }
     } catch (error) {
-      console.log(error)
+      console.error('Error al enviar el email:', error);
     }
-  }
+  };
 
   const onSubmit = async (data) => {
     try {
       setLoading(true)
       let messageId = await createMessage(data)
-      await sendEmail()
+      await sendEmails()
       navigate(`/contacto/${messageId}`)
     } catch (error) {
-      console.log(error)
+      console.error('Error en el envío del formulario:', error);
     } finally {
       setLoading(false)
     }
@@ -67,7 +67,10 @@ export default function FormContact() {
       <div className='flex flex-col gap-1'>
         <label htmlFor="message">Dejanos tu comentario:</label>
         <textarea
-          {...register('message', { required: 'Por favor deja un mensaje para que podamos contactarte.' })}
+          {...register('message', {
+            required: 'Por favor deja un mensaje para que podamos contactarte.',
+            minLength: { value: 10, message: 'El mensaje debe tener al menos 10 caracteres.' }
+          })}
           className={`border hover:border-textMain focus:border-textMain rounded-xl px-4 py-2 outline-none ease-out duration-300
           ${errors['message'] ? 'border-red-600' : inputValue ? 'border-textMain' : 'border-textMain/50'}
           `}
@@ -75,16 +78,24 @@ export default function FormContact() {
           rows="12"
           placeholder="Escribe tu comentario aquí..."
         />
-        {errors['message'] && <p className="text-red-600 text-sm">{errors['message'].message}</p>}
+        {errors.message && <p className="text-red-600 text-sm">{errors.message.message}</p>}
       </div>
 
-      <button className='myButton md:w-1/4 md:mx-auto' type='submit'>Enviar</button>
+      <button
+        className='myButton md:w-1/4 md:mx-auto'
+        type='submit'
+        disabled={loading}
+      >
+        {loading ? 'Enviando...' : 'Enviar'}
+      </button>
 
-      {loading && (
-        <div className='absolute flex items-center h-full w-full bg-textMain/50 top-0 left-0'>
-          <PuffLoader color='#ffe7ce' className='m-auto' size={100} />
-        </div>
-      )}
+      {
+        loading && (
+          <div className='absolute flex items-center h-full w-full bg-textMain/50 top-0 left-0'>
+            <PuffLoader color='#ffe7ce' className='m-auto' size={100} />
+          </div>
+        )
+      }
     </form>
   )
 }
