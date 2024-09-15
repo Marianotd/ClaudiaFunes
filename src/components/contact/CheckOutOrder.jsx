@@ -1,35 +1,41 @@
-import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-import { getOrder } from '../../services/firestore'
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { getOrder } from '../../services/firestore';
 import { PuffLoader } from "react-spinners";
 import { MdError } from 'react-icons/md';
+import NotFound from '../../views/NotFound';
 
 export default function CheckOutOrder({ collection, message, message2 }) {
-    const { orderid } = useParams('orderid')
-    const [order, setOrder] = useState()
-    const [loading, setLoading] = useState(true)
-    const [error, setError] = useState(false)
+    const { orderid } = useParams('orderid');
+    const [order, setOrder] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
+    const [notFound, setNotFound] = useState(false);
 
     useEffect(() => {
         const fetchOrder = async () => {
             try {
-                const newOrder = await getOrder(collection, orderid)
-                if (collection === 'orders') {
-                    let { buyer } = newOrder
-                    setOrder(buyer)
+                const newOrder = await getOrder(collection, orderid);
+
+                if (newOrder === null) {
+                    setNotFound(true);
                 } else {
-                    setOrder(newOrder)
+                    if (collection === 'orders') {
+                        let { buyer } = newOrder;
+                        setOrder(buyer);
+                    } else {
+                        setOrder(newOrder);
+                    }
                 }
-            } catch (error) {
-                setError(error)
+            } catch (err) {
+                setError(err);
             } finally {
-                setLoading(false)
+                setLoading(false);
             }
-        }
+        };
 
-        fetchOrder()
-
-    }, [orderid])
+        fetchOrder();
+    }, [orderid, collection]);
 
     if (loading) {
         return (
@@ -37,15 +43,23 @@ export default function CheckOutOrder({ collection, message, message2 }) {
                 <PuffLoader color='#ffe7ce' size={100} />
                 <p className="text-white">Cargando archivo...</p>
             </div>
-        )
+        );
     }
 
     if (error) {
         return (
             <div className='min-h-screen flex items-center justify-center text-xl md:text-2xl font-bold gap-4 flex-grow'>
-                <MdError /> Ha ocurrido un error
+                <MdError />
+                <div>
+                    <p>Ha ocurrido un error al cargar la orden.</p>
+                    <p>{error.message ? error.message : "Por favor, inténtelo de nuevo más tarde."}</p>
+                </div>
             </div>
-        )
+        );
+    }
+
+    if (notFound) {
+        return <NotFound />
     }
 
     return (
@@ -61,6 +75,5 @@ export default function CheckOutOrder({ collection, message, message2 }) {
                 <span className='font-bold'> {orderid}</span>
             </p>
         </div>
-
-    )
+    );
 }
