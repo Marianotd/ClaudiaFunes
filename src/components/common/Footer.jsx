@@ -10,7 +10,7 @@ export default function Footer() {
             links: [
                 { label: 'Instagram', path: 'https://www.instagram.com/' },
                 { label: 'Facebook', path: 'https://es-la.facebook.com/' },
-                { label: 'Twitter', path: 'https://es-la.facebook.com/' },
+                { label: 'Twitter', path: 'https://twitter.com/' },
                 { label: 'Pinterest', path: 'https://ar.pinterest.com/' },
                 { label: 'Whatsapp', path: 'https://api.whatsapp.com/send/?phone=5492612483644&text&type=phone_number&app_absent=0' },
             ],
@@ -33,18 +33,19 @@ export default function Footer() {
         <footer className="max-w-[1220px] mx-auto p-4 text-center flex flex-col gap-6">
             <Logo />
 
-            <div className='grid grid-cols-2'>
+            <nav className='grid grid-cols-2'>
                 {
-                    footerLinks.map((group, index) => (
+                    footerLinks.map((linkGroup, index) => (
                         <div
-                            key={`${index}-${group.title}`}
+                            key={`${index}-${linkGroup.title}`}
                             className='flex flex-col items-center gap-2'
                         >
-                            <LinkList data={group.links} isFooter={true} isExternal={group.isExternal} />
+                            <h4 className="text-lg font-semibold">{linkGroup.title}</h4>
+                            <LinkList data={linkGroup.links} isFooter={true} isExternal={linkGroup.isExternal} />
                         </div>
                     ))
                 }
-            </div>
+            </nav>
         </footer>
     )
 }

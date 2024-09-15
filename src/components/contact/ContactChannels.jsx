@@ -1,5 +1,4 @@
 import React from 'react'
-// ICONOS
 import { BsFacebook, BsInstagram } from 'react-icons/bs';
 import { GrMail } from 'react-icons/gr';
 
@@ -12,7 +11,9 @@ export default function ContactChannels() {
         className='flex items-center gap-2 hover:text-secondary ease-out duration-300'
         href="https://www.facebook.com/"
         target={'_blank'}
-        rel='noopener noreferrer'>
+        rel='noopener noreferrer'
+        aria-label='Facebook de La Proporción Aurea - Por Claudia Funes'
+      >
         <span>
           <BsFacebook />
         </span>
@@ -23,7 +24,9 @@ export default function ContactChannels() {
         className='flex items-center gap-2 hover:text-secondary ease-out duration-300'
         href="https://www.instagram.com/"
         target={'_blank'}
-        rel='noopener noreferrer'>
+        rel='noopener noreferrer'
+        aria-label='Instagram de La Proporción Aurea'
+      >
         <span>
           <BsInstagram />
         </span>
@@ -32,9 +35,9 @@ export default function ContactChannels() {
 
       <a
         className='flex items-center gap-2 hover:text-secondary ease-out duration-300'
-        href="https://mail.google.com/mail/u/0/#inbox"
-        target={'_blank'}
-        rel='noopener noreferrer'>
+        href="mailto:lapropaurea.cf@gmail.com"
+        aria-label='Enviar correo a La Proporción Aurea'
+      >
         <span>
           <GrMail />
         </span>

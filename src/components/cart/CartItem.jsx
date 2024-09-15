@@ -9,7 +9,7 @@ export default function CartItem({ id, name, img, price, count }) {
     if (sustractItem) {
       sustractItem(id)
     } else {
-      console.error('sustractItem no está disponible en el contexto.')
+      console.error('No se ha encontrado la función solicitada.')
     }
   }
 

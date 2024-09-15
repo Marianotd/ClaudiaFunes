@@ -5,6 +5,7 @@ import CartList from '../list/CartList'
 import CartTotal from './CartTotal'
 import ClearCart from './ClearCart'
 import CheckOutButton from './CheckOutButton'
+import NotFound from '../../views/NotFound'
 
 export default function Cart() {
   const navigate = useNavigate()
@@ -12,6 +13,11 @@ export default function Cart() {
 
   function handleCheckOut() {
     navigate(`/cart/checkout/`)
+  }
+
+  if (!cart) {
+    console.error('Error al cargar el carrito de compras.')
+    return <NotFound />
   }
 
   return (
