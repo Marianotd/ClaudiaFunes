@@ -3,11 +3,11 @@ import { cartContext } from '../../context/CartContext'
 import { FaTrash } from "react-icons/fa";
 
 export default function CartItem({ id, name, img, price, count }) {
-  const { sustractItem } = useContext(cartContext)
+  const { subtractItem } = useContext(cartContext)
 
   const handleSustract = () => {
-    if (sustractItem) {
-      sustractItem(id)
+    if (subtractItem) {
+      subtractItem(id)
     } else {
       console.error('No se ha encontrado la función solicitada.')
     }

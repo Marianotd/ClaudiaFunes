@@ -1,6 +1,6 @@
 import React from 'react'
 import Portada from '../components/home/Portada'
-import ItemListContainer from '../components/list/ItemListContainer'
+import ItemListContainer from '../components/categories/ItemListContainer'
 import CatTitle from '../components/categories/CatTitle'
 
 export default function Home() {

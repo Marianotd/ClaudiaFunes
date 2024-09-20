@@ -3,63 +3,48 @@ import React, { useState, createContext } from 'react'
 const cartContext = createContext()
 
 export default function CartContextProvider({ children }) {
-    const [cart, setCart] = useState([])
+  const [cart, setCart] = useState([])
 
-    function addItem(item, count){
-      if(isInCart(item.id)){
-        const newCart = cart.map( itemCart => {
-          if(itemCart.id === item.id){
-            itemCart.count += count
-            return itemCart
-          } else {
-            return itemCart
-          }
-        })
-        setCart(newCart)
-      } else {
-        const newCart = cart.map( item => item)
-        newCart.push({...item, count})
-        setCart(newCart)
-      }
+  function addItem(item, count) {
+    if (isInCart(item.id)) {
+      const newCart = cart.map(cartItem =>
+        cartItem.id === item.id ? { ...cartItem, count: cartItem.count + count } : cartItem
+      );
+      setCart(newCart);
+    } else {
+      setCart([...cart, { ...item, count }]);
     }
+  }
 
-    function sustractItem(id){
-      const index = cart.findIndex( item => item.id === id)
-      cart.splice(index, 1)
-      const newCart = cart.map( item => item)
-      setCart(newCart)
-    }
+  function subtractItem(id) {
+    const newCart = cart.filter(item => item.id !== id)
+    setCart(newCart)
+  }
 
-    function cartCount(){
-        let total = 0
-        cart.forEach(item => total += item.count)
-        return total
-    }
+  function cartCount() {
+    return cart.reduce((total, item) => total + item.count, 0)
+  }
 
-    function totalCount(){
-      let subTotal = 0
-      cart.forEach(item => subTotal += (item.price * item.count))
-      let envio = subTotal >= 2000 ? "Gratis" : 250
-      let total = subTotal >= 2000 ? subTotal : (subTotal + envio)
-      return {subTotal, envio, total}
-    }
+  function totalCount() {
+    const subTotal = cart.reduce((acc, item) => acc + item.price * item.count, 0);
+    const envio = subTotal >= 2000 ? "Gratis" : 250
+    const total = subTotal >= 2000 ? subTotal : (subTotal + 250)
+    return { subTotal, envio, total }
+  }
 
-    function isInCart(id){
-      let found = cart.some(item => item.id === id)
-      return found
-    }
+  function isInCart(id) {
+    return cart.some(item => item.id === id)
+  }
 
-    function clearCart(){
-      cart.splice(0, cart.length)
-      const newCart = cart.map( item => item)
-      setCart(newCart)
-    }
+  function clearCart() {
+    setCart([]);
+  }
 
   return (
-    <cartContext.Provider value={{ cart, addItem, cartCount, sustractItem, totalCount, clearCart }}>
-        {children}
+    <cartContext.Provider value={{ cart, addItem, cartCount, subtractItem, totalCount, clearCart }}>
+      {children}
     </cartContext.Provider>
   )
 }
 
-export {cartContext}
+export { cartContext }

@@ -26,7 +26,7 @@ export default function Cart() {
       <div className='min-h-screen md:w-2/3 lg:w-full mx-auto flex flex-col lg:grid grid-cols-2 grid-rows-[max-content_1fr]  items-center gap-6'>
         {
           cart.length === 0 ? (
-            <div className='text-2xl flex flex-col gap-6 items-center font-medium self-center m-auto text-center'>
+            <div className='col-span-2 row-span-2 text-2xl flex flex-col gap-6 items-center font-medium self-center m-auto text-center'>
               <h2>Aun no has añadido ningún producto al carrito</h2>
               <Link
                 className='myButton'
@@ -40,9 +40,7 @@ export default function Cart() {
             <>
               <ClearCart />
 
-              <div className='flex flex-col gap-6'>
-                <CartList cartItems={cart} />
-              </div>
+              <CartList cartItems={cart} />
 
               <div className='flex flex-col items-center gap-6'>
                 <CartTotal />

@@ -13,13 +13,14 @@ export default function Item({ id, name, img, category }) {
           <img
             src={img}
             className="object-cover h-full mx-auto rounded-xl hover:scale-105 shadow-cardContainer ease-out duration-500"
-            alt={name}
+            alt={`Imagen de ${name}`}
           />
         </div>
 
         <Link
           to={urlDetail}
           className='myButton'
+          aria-label={`Ver detalles de ${name}`}
         >
           Ver detalles
         </Link>

@@ -13,7 +13,7 @@ export default function SwiperNovs({ data }) {
       modules={[Navigation, Pagination, Autoplay]}
       spaceBetween={24}
       navigation={false}
-      autoplay={{ delay: 3000 }}
+      autoplay={{ delay: 3000, disableOnInteraction: false, pauseOnMouseEnter: true }}
       slidesPerView={1}
       loop={true}
       breakpoints={{
@@ -34,8 +34,6 @@ export default function SwiperNovs({ data }) {
             id={item.id}
             name={item.name}
             img={item.img}
-            price={item.price}
-            description={item.description}
             category={item.category}
           />
         </SwiperSlide>
